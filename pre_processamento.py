@@ -9,7 +9,7 @@ def remove_stopwords(df):
     stop_pt = set(nltk.corpus.stopwords.words('portuguese'))
     df['excerpt'] = df['excerpt'].apply(lambda x: ' '.join([word for word in x.split() if word not in stop_pt]))
     
-    return df['excerpt'], list(df['excerpt'])
+    return df, df['excerpt'], list(df['excerpt'])
 
 # 2. Normalização
 #remover pontuacao
