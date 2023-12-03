@@ -3,6 +3,7 @@ import pathlib
 import nltk
 from nltk.corpus import stopwords
 
+nltk.download('stopwords')
 ### Tecnicas de Pré-processamento
 # 1. Stopwords
 def remove_stopwords(df):
