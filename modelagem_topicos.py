@@ -9,6 +9,8 @@ from nltk.corpus import stopwords
 import re
 import string
 
+# https://rustup.rs
+#https://medium.com/leti-pires/modelagem-de-tópicos-em-python-utilizando-o-modelo-de-alocação-latente-de-dirichlet-lda-3276a469f421
 #https://maartengr.github.io/BERTopic/index.html#attributes
 #@article{grootendorst2022bertopic,
 #  title={BERTopic: Neural topic modeling with a class-based TF-IDF procedure},
@@ -18,7 +20,7 @@ import string
 #}
 nltk.download('punkt')
 nltk.download('stopwords')
-
+ 
 def extract_text(pdf_path):
     text = ""
     with open(pdf_path, "rb") as pdf_file:
@@ -42,7 +44,7 @@ def preprocess(docs):
 pt_stopwords = stopwords.words('portuguese')
 new_stopwords = ['anexo', 'parágrafo', 'após', 'meio', 'incluindo', 'quais',
                   'outros', 'âmbito', 'diretrizes', 'rede', 'investimentos', 'investimento']
-stopwords_set = set(pt_stopwords + new_stopwords)
+stopwords_set = set(pt_stopwords + [word.lower() for word in new_stopwords])
 doc = preprocess(extract_text('./raw_data/portaria_rede_cegonha.pdf'))
 
 #https://www.sbert.net/docs/pretrained_models.html
