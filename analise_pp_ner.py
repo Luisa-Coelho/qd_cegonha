@@ -1,67 +1,33 @@
 ### Classificacao por meio de Reconhecimento de Entidades Nomeadas
-
-import pre_processamento
-import zipfile
 import pandas as pd
 import numpy as np
 import spacy
+import pathlib
+from collections import Counter
+#from gensim.models import KeyedVectors
 
 PATH = (".")
 
-with zipfile.ZipFile("./raw_data/saude.csv.zip", 'r') as zip_ref:
-    with zip_ref.open('saude.csv') as arquivo_csv:
-        df = pd.read_csv(arquivo_csv)
+#model = KeyedVectors.load_word2vec_format('./corpus_nilc.txt')
 
 nlp = spacy.load("pt_core_news_lg")
 
-new_df = df[['excerpt', 'source_territory_id', 'source_state_code', 'source_territory_name', 'source_date']]
-new_df['ano'] = new_df['source_date'].str.extract(r'(\d{4})')
-new_df.loc[:, 'ano'] = pd.to_numeric(new_df['ano'], errors='coerce')
-new_df = new_df[(new_df['ano'] >= 2011) & (new_df['ano'] <= 2021)]
-
-#print(new_df.head(8))
-def nlp_preprocessamento(df):
-    #doc_full = [nlp(excerpt) for excerpt in df]
-    doc1 = [nlp(excerpt) for excerpt in df[1:1000]]
-    return doc1
-
-##### APLICANDO DIEFRENTES PRÉ-PROCESSAMENTOS NA AMOSTRA ###
-list_df_stopwords = nlp_preprocessamento(pre_processamento.remove_stopwords(new_df))
-list_df_normalizacao = nlp_preprocessamento(pre_processamento.normalizacao(new_df))
-list_df_ngrams = nlp_preprocessamento(pre_processamento.documentNgrams(new_df))
-list_df_lemmas = pre_processamento.lematizacao(nlp_preprocessamento(new_df['excerpt'].tolist()))
-list_df_pos = pre_processamento.pos(nlp_preprocessamento(new_df['excerpt'].tolist()))
-list_df_sem_processamento = nlp_preprocessamento(new_df['excerpt'])
-
-print(f'stopwords {len(list_df_stopwords)}')
-print(f'normalizacao {len(list_df_normalizacao)}')
-print(f'ngram {len(list_df_ngrams)}')
-print(f'lematizacao {len(list_df_lemmas)}')
-print(f'pos {len(list_df_pos)}')
-print(len(list_df_sem_processamento))
-print(len(list(new_df['excerpt'])))
-
-print(f'Tokens em stopwords: {sum(len(doc) for doc in list_df_stopwords)}')
-print(f'Tokens em normalizacao: {sum(len(doc) for doc in list_df_normalizacao)}')
-print(f'Tokens em n-grama: {sum(len(doc) for doc in list_df_ngrams)}')
-print(f'Tokens em lemmas: {sum(len(doc) for doc in list_df_lemmas)}')
-print(f'Tokens em POS: {sum(len(doc) for doc in list_df_pos)}')
-print(f'Tokens sem pre-processamento: {sum(len(doc) for doc in list_df_sem_processamento)}')
-
 def media_entidades_lemmas(lista_lemmas):
     media_entidades_lemmas = []
-    for doc in list_df_lemmas:
+    for doc in lista_lemmas:
         doc_lemmas = nlp(" ".join(doc))
-        print([ent.text for ent in doc_lemmas.ents])
         media_entidades_lemmas.append(len(doc_lemmas.ents))
     
     return np.mean(media_entidades_lemmas)
 
-media_entidades_stopwords = np.mean([len(w.ents) for w in list_df_stopwords])
-media_entidades_normalizacao = np.mean([len(w.ents) for w in list_df_normalizacao])
-media_entidades_ngram = np.mean([len(w.ents) for w in list_df_ngrams])
-media_entidades_lematizacao = media_entidades_lemmas(list_df_lemmas)
-media_entidades_pos = np.mean([len(w.ents) for w in list_df_pos])
+def media_entidades_pos(lista_pos):
+    media_entidades_pos = []
+    for doc in lista_pos:
+        doc_pos = nlp(" ".join(doc))
+        media_entidades_pos.append(len(doc_pos.ents))
+    
+    return np.mean(media_entidades_pos)
+
 
 def resultado_media_entidades(**media_entidades):
     print(f'Media entidades Stopwords {media_entidades["stopwords"]}\n')
@@ -71,25 +37,90 @@ def resultado_media_entidades(**media_entidades):
     print(f'Media entidades POS {media_entidades["pos"]}\n')
     
 
-def count_docs(lista):
-    entidades = {}
+def count_docs(lista_nlp_preprocessed):
+    
     total_entity_counts = {}
-    mais_entidades_doc = 0
-    menos_entidades_doc = 100
-    excerpt = 0
+    mais_entidades = 0
+    menos_entidades = 100
     count = 0
+    entidades_contagem = []
+    entidades = []
+    entidades_misc = []
+    entidades_org = []
+    entidades_per = []
+    entidades_loc = []
+    doc_count = 0
+    
+    doc_mais_entidades = 0
+    doc_menos_entidades = 0
+    mais_entidades_real = 0
+    menos_entidades_real = 200
 
-    for doc in nlp_preprocessamento(lista):
+    for doc in lista_nlp_preprocessed:
+        #doc_new = nlp(" ".join(doc))
+        doc_new = doc
+        doc_count +=1
+        entities = {}
         entity_counts = {}
-        count = 0
+        entities_misc = {}
+        entities_org = {}
+        entities_per = {}
+        entities_loc = {}
 
-        for entidade in doc.ents:
+        for entidade in doc_new.ents:
             count += 1
 
-            if entidade.text in entidades:
-                entidades[entidade.text] += 1
+            if entidade.text in entities:
+                entities[entidade.text] += 1
+                if entidade.label_ == 'MISC':
+                    if entidade.text in entities_misc:
+                        entities_misc[entidade.text] += 1
+                    else:
+                        entities_misc[entidade.text] = 1
+
+                if entidade.label_ == 'ORG':
+                    if entidade.text in entities_org:
+                        entities_org[entidade.text] += 1
+                    else:
+                        entities_org[entidade.text] = 1
+
+                if entidade.label_ == 'PER':
+                    if entidade.text in entities_per:
+                        entities_per[entidade.text] += 1
+                    else:
+                        entities_per[entidade.text] = 1
+
+                if entidade.label_ == 'LOC':
+                    if entidade.text in entities_loc:
+                        entities_loc[entidade.text] += 1
+                    else:
+                        entities_loc[entidade.text] = 1
+
             else:
-                entidades[entidade.text] = 1
+                entities[entidade.text] = 1
+                if entidade.label_ == 'MISC':
+                    if entidade.text in entities_misc:
+                        entities_misc[entidade.text] += 1
+                    else:
+                        entities_misc[entidade.text] = 1
+
+                if entidade.label_ == 'ORG':
+                    if entidade.text in entities_org:
+                        entities_org[entidade.text] += 1
+                    else:
+                        entities_org[entidade.text] = 1
+
+                if entidade.label_ == 'PER':
+                    if entidade.text in entities_org:
+                        entities_per[entidade.text] += 1
+                    else:
+                        entities_per[entidade.text] = 1
+
+                if entidade.label_ == 'LOC':
+                    if entidade.text in entities_org:
+                        entities_loc[entidade.text] += 1
+                    else:
+                        entities_loc[entidade.text] = 1
 
             if entidade.label_ in entity_counts:
                 entity_counts[entidade.label_] += 1
@@ -97,42 +128,76 @@ def count_docs(lista):
             else:
                 entity_counts[entidade.label_] = 1
 
-        if count > mais_entidades_doc:
-            mais_entidades_doc = count
+            if count > mais_entidades:
+                mais_entidades = count
+                doc_mais_entidades = doc_count
 
-        if count < menos_entidades_doc:
-            menos_entidades_doc = count
+            if count < menos_entidades:
+                menos_entidades = count
+                doc_menos_entidades = doc_count
+    
+    entidades.append(entities)
+    entidades_contagem.append(entity_counts)
+    entidades_misc.append(entities_misc)
 
-    for entity_type, count in entity_counts.items():
-        if entity_type in total_entity_counts:
-            total_entity_counts[entity_type] += count
-        else:
-            total_entity_counts[entity_type] = count
+    if mais_entidades > mais_entidades_real:
+        mais_entidades_real = mais_entidades
+        doc_mais_entidades_real = doc_mais_entidades
 
-    print(f"Excerto com maior numero de entidades: {mais_entidades_doc}: {lista[mais_entidades_doc]}\n")
-    print(f"Excerto com menor numero de entidades: {menos_entidades_doc}: {lista[menos_entidades_doc]}\n")
+    if menos_entidades < menos_entidades_real:
+        menos_entidades_real = menos_entidades
+        doc_menos_entidades_real = doc_menos_entidades
 
-    return total_entity_counts, entidades
+    for dicionario in entidades_contagem:
+        for chave, valor in dicionario.items():
+            if chave in total_entity_counts:
+                total_entity_counts[chave] += 1
+            else:
+                total_entity_counts[chave] = 1
+    
 
-def frequencia_entidades(total_entity_counts, entidades):
+    excerto_maior = f"Excerto com maior numero de entidades: {mais_entidades_real}: {lista_nlp_preprocessed[doc_mais_entidades_real - 1]}\n"
+    excerto_menor = f"Excerto com menor numero de entidades: {menos_entidades_real}: {lista_nlp_preprocessed[doc_menos_entidades_real - 1]}\n"
+
+    return total_entity_counts, entidades, excerto_maior, excerto_menor, entidades_misc
+
+def frequencia_entidades(total_entity_counts, entidades, entidades_misc):
     print("Contagem entidades:\n")
     for entity_type, total_count in total_entity_counts.items():
         print(f"{entity_type}: {total_count}\n")
 
-    print('Entidade que mais aparece entre os documentos - MISC\n')
-    for i in sorted(entidades, key = entidades.get, reverse=False):
-        print(i, entidades[i])
+    print('Entidade que mais aparece entre os documentoS\n')
+    contagem_total = Counter
+    lista_de_tuplas = [tuple(d.items()) for d in entidades]
+    todas_as_tuplas = [item for sublist in lista_de_tuplas for item in sublist]
+    contagem = contagem_total(todas_as_tuplas)
+    oito_maiores_entidades = contagem.most_common(8)
 
-    for i in sorted(entidades, key=lambda x: (entidades[x], x == 'MISC'), reverse=False):
-        print(i, entidades[i])
+    for entidade, contagem in oito_maiores_entidades:
+      print(f'{entidade}: {contagem} ocorrências')
+##
+    print('\n\nENTIDADES MISC')
+    contagem_total = Counter
+    lista_de_tuplas = [tuple(d.items()) for d in entidades_misc]
+    todas_as_tuplas = [item for sublist in lista_de_tuplas for item in sublist]
+    contagem = contagem_total(todas_as_tuplas)
+    oito_maiores_misc = contagem.most_common(8)
 
-#total_entidades, entidades_n  = count_docs(list_df_stopwords)
-#frequencia_entidades(total_entidades, entidades_n)
-#resultado_media_entidades(stopwords = media_entidades_stopwords, normalizacao = media_entidades_normalizacao, ngram = media_entidades_ngram,
-# lematizacao=media_entidades_lematizacao, pos = media_entidades_pos)
-
-#### ENTIDADEs QUE MAIS APARECEM - TOTAL
-### MEDIA DE ENTIDADES POR DOCUMENTO
-### TOTAL de entidades
-### ENTIDADES QUE MAIS APARECEM POR DOCUMENTO > ENTRE E INTER. Será que tem ents que repetem no mesmo doc?
-### EXCERTO COM MAIS E MENOS ENTIDADES >> explorar excerto
+    for entidade, contagem in oito_maiores_misc:
+        print(f'{entidade}: {contagem} ocorrências') 
+        
+#
+#    print('\n\nENTIDADES ORG')
+#    for i in sorted(entidades, key=lambda x: (entidades[x], x == 'ORG'), reverse=True)[:8]:
+#        print(i, entidades[i])  
+#        
+#
+#    print('\n\nENTIDADES PER')
+#    for i in sorted(entidades, key=lambda x: (entidades[x], x == 'PER'), reverse=True)[:8]:
+#        print(i, entidades[i])  
+#        
+#
+#    print('\n\nENTIDADES LOC')
+#    for i in sorted(entidades, key=lambda x: (entidades[x], x == 'LOC'), reverse=True)[:8]:
+#        print(i, entidades[i])
+#

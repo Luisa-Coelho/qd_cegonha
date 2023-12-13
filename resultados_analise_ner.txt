@@ -1,0 +1,29 @@
+### Analisando 1000 excertos
+stopwords 999
+normalizacao 999
+ngram 1
+lematizacao 999
+pos 999
+999
+71802
+
+#### Analisando 1000 excertos
+Tokens em stopwords: 204.611
+Tokens em normalizacao: 160.781
+Tokens em n-grama: 1
+Tokens em lemmas: 160.781
+Tokens em POS: 53.075
+Tokens sem pre-processamento: 160.781
+
+#### MÉDIAS DE ENTIDADES POR PRÉ-PROCESSAMENTO #######
+
+
+##### STOPWORDS ########
+TOTAL entidades
+LOC:
+PER:
+ORG:
+
+
+#### NORMALIZACAO #######
+
