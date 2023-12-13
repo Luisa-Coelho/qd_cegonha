@@ -26,23 +26,27 @@ def nlp_preprocessamento(df):
     return doc1
 
 ##### APLICANDO DIEFRENTES PRÉ-PROCESSAMENTOS NA AMOSTRA ###
-list_df_stopwords = pre_processamento.remove_stopwords(new_df)
-list_df_normalizacao = pre_processamento.normalizacao(new_df)
-list_df_ngrams = pre_processamento.documentNgrams(new_df)
+list_df_stopwords = nlp_preprocessamento(pre_processamento.remove_stopwords(new_df))
+list_df_normalizacao = nlp_preprocessamento(pre_processamento.normalizacao(new_df))
+list_df_ngrams = nlp_preprocessamento(pre_processamento.documentNgrams(new_df))
 list_df_lemmas = pre_processamento.lematizacao(nlp_preprocessamento(new_df['excerpt'].tolist()))
+list_df_pos = pre_processamento.pos(nlp_preprocessamento(new_df['excerpt'].tolist()))
+list_df_sem_processamento = nlp_preprocessamento(new_df['excerpt'])
 
-print(len(list_df_stopwords))
-print(len(list_df_normalizacao))
-print(len(list_df_ngrams))
-print(len(list_df_lemmas))
-print(len(list(df['excerpt'])))
+print(f'stopwords {len(list_df_stopwords)}')
+print(f'normalizacao {len(list_df_normalizacao)}')
+print(f'ngram {len(list_df_ngrams)}')
+print(f'lematizacao {len(list_df_lemmas)}')
+print(f'pos {len(list_df_pos)}')
+print(len(list_df_sem_processamento))
 print(len(list(new_df['excerpt'])))
 
 print(f'Tokens em stopwords: {sum(len(doc) for doc in list_df_stopwords)}')
 print(f'Tokens em normalizacao: {sum(len(doc) for doc in list_df_normalizacao)}')
 print(f'Tokens em n-grama: {sum(len(doc) for doc in list_df_ngrams)}')
 print(f'Tokens em lemmas: {sum(len(doc) for doc in list_df_lemmas)}')
-print(f'Tokens sem pre-processamento: {sum(len(doc) for doc in new_df["excerpt"])}')
+print(f'Tokens em POS: {sum(len(doc) for doc in list_df_pos)}')
+print(f'Tokens sem pre-processamento: {sum(len(doc) for doc in list_df_sem_processamento)}')
 
 def media_entidades_lemmas(lista_lemmas):
     media_entidades_lemmas = []
@@ -53,14 +57,19 @@ def media_entidades_lemmas(lista_lemmas):
     
     return np.mean(media_entidades_lemmas)
 
-media_entidades_stopwords = np.mean([len(w.ents) for w in nlp_preprocessamento(list_df_stopwords)])
-media_entidades_normalizacao = np.mean([len(w.ents) for w in nlp_preprocessamento(list_df_normalizacao)])
-media_entidades_ngrams = np.mean([len(w.ents) for w in nlp_preprocessamento(list_df_ngrams)])
+media_entidades_stopwords = np.mean([len(w.ents) for w in list_df_stopwords])
+media_entidades_normalizacao = np.mean([len(w.ents) for w in list_df_normalizacao])
+media_entidades_ngram = np.mean([len(w.ents) for w in list_df_ngrams])
 media_entidades_lematizacao = media_entidades_lemmas(list_df_lemmas)
+media_entidades_pos = np.mean([len(w.ents) for w in list_df_pos])
 
 def resultado_media_entidades(**media_entidades):
-    print(f'Media entidades Lematização {media_entidades["lematizacao"]}\n')
+    print(f'Media entidades Stopwords {media_entidades["stopwords"]}\n')
+    print(f'Media entidades Normalizacao {media_entidades["normalizacao"]}\n')
     print(f'Media entidades N-Grama {media_entidades["ngram"]}\n')
+    print(f'Media entidades Lematização {media_entidades["lematizacao"]}\n')
+    print(f'Media entidades POS {media_entidades["pos"]}\n')
+    
 
 def count_docs(lista):
     entidades = {}
@@ -117,9 +126,10 @@ def frequencia_entidades(total_entity_counts, entidades):
     for i in sorted(entidades, key=lambda x: (entidades[x], x == 'MISC'), reverse=False):
         print(i, entidades[i])
 
-total_entidades, entidades_n  = count_docs(list_df_stopwords)
+#total_entidades, entidades_n  = count_docs(list_df_stopwords)
 #frequencia_entidades(total_entidades, entidades_n)
-#resultado_media_entidades(lematizacao=media_entidades_lematizacao, ngram=media_entidades_ngrams)
+#resultado_media_entidades(stopwords = media_entidades_stopwords, normalizacao = media_entidades_normalizacao, ngram = media_entidades_ngram,
+# lematizacao=media_entidades_lematizacao, pos = media_entidades_pos)
 
 #### ENTIDADEs QUE MAIS APARECEM - TOTAL
 ### MEDIA DE ENTIDADES POR DOCUMENTO
