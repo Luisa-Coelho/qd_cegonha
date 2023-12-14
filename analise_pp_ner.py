@@ -50,15 +50,17 @@ def count_docs(lista_nlp_preprocessed):
     entidades_per = []
     entidades_loc = []
     doc_count = 0
-    
+    doc_mais_entidades_real = 0
+    doc_menos_entidades_real = 0
     doc_mais_entidades = 0
     doc_menos_entidades = 0
     mais_entidades_real = 0
     menos_entidades_real = 200
 
     for doc in lista_nlp_preprocessed:
-        #doc_new = nlp(" ".join(doc))
-        doc_new = doc
+        doc_new = nlp(" ".join(doc))
+        #doc_new = doc
+        
         doc_count +=1
         entities = {}
         entity_counts = {}
@@ -140,13 +142,13 @@ def count_docs(lista_nlp_preprocessed):
     entidades_contagem.append(entity_counts)
     entidades_misc.append(entities_misc)
 
-    if mais_entidades > mais_entidades_real:
-        mais_entidades_real = mais_entidades
-        doc_mais_entidades_real = doc_mais_entidades
-
-    if menos_entidades < menos_entidades_real:
-        menos_entidades_real = menos_entidades
-        doc_menos_entidades_real = doc_menos_entidades
+    #if mais_entidades > mais_entidades_real:
+    #    mais_entidades_real = mais_entidades
+    #    doc_mais_entidades_real = doc_mais_entidades
+#
+    #if menos_entidades < menos_entidades_real:
+    #    menos_entidades_real = menos_entidades
+    #    doc_menos_entidades_real = doc_menos_entidades
 
     for dicionario in entidades_contagem:
         for chave, valor in dicionario.items():
@@ -154,14 +156,20 @@ def count_docs(lista_nlp_preprocessed):
                 total_entity_counts[chave] += 1
             else:
                 total_entity_counts[chave] = 1
+
+    total_entities_count = sum(entity_counts.values())
+    if total_entities_count > mais_entidades_real:
+            mais_entidades_real = total_entities_count
+            doc_mais_entidades_real = doc_count
+
+    if total_entities_count < menos_entidades_real:
+            menos_entidades_real = total_entities_count
+            doc_menos_entidades_real = doc_count
     
 
-    excerto_maior = f"Excerto com maior numero de entidades: {mais_entidades_real}: {lista_nlp_preprocessed[doc_mais_entidades_real - 1]}\n"
-    excerto_menor = f"Excerto com menor numero de entidades: {menos_entidades_real}: {lista_nlp_preprocessed[doc_menos_entidades_real - 1]}\n"
+    return total_entity_counts, entidades, mais_entidades_real, doc_mais_entidades_real, menos_entidades_real, doc_menos_entidades_real, entidades_misc, entidades_org
 
-    return total_entity_counts, entidades, excerto_maior, excerto_menor, entidades_misc
-
-def frequencia_entidades(total_entity_counts, entidades, entidades_misc):
+def frequencia_entidades(total_entity_counts, entidades, entidades_misc, entidades_org):
     print("Contagem entidades:\n")
     for entity_type, total_count in total_entity_counts.items():
         print(f"{entity_type}: {total_count}\n")
@@ -187,9 +195,15 @@ def frequencia_entidades(total_entity_counts, entidades, entidades_misc):
         print(f'{entidade}: {contagem} ocorrências') 
         
 #
-#    print('\n\nENTIDADES ORG')
-#    for i in sorted(entidades, key=lambda x: (entidades[x], x == 'ORG'), reverse=True)[:8]:
-#        print(i, entidades[i])  
+    print('\n\nENTIDADES ORG')
+    contagem_total = Counter
+    lista_de_tuplas = [tuple(d.items()) for d in entidades_org]
+    todas_as_tuplas = [item for sublist in lista_de_tuplas for item in sublist]
+    contagem = contagem_total(todas_as_tuplas)
+    oito_maiores_misc = contagem.most_common(8)
+
+    for entidade, contagem in oito_maiores_misc:
+        print(f'{entidade}: {contagem} ocorrências')  
 #        
 #
 #    print('\n\nENTIDADES PER')

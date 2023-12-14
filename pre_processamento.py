@@ -5,6 +5,7 @@ import string
 import spacy
 from nltk import ngrams
 
+
 nltk.download('stopwords')
 
 ### Tecnicas de Pré-processamento
@@ -48,6 +49,19 @@ def pos(lista):
     return list_pos
 
 # 5. Embeddings
+def embeddings(model, tokens):
+    embeddings = []
+    for token in tokens:
+        if token in model.wv:
+            embeddings.append(model.wv[token])
+    return embeddings
+#vetores = [modelo_embeddings[palavra] if palavra in modelo_embeddings else [0.0] * dimensao_do_vetor for palavra in tokens]
+
+# Juntar os vetores de volta em um texto (opcional)
+# texto_preprocessado = " ".join(tokens)
+
+# Processar o texto pré-processado com spaCy para NER
+#doc = nlp.make_doc(" ".join(tokens))
 
 # 6. N-Gramas
 def n_grams_pp(df):
@@ -62,15 +76,34 @@ def documentNgrams(df):
 
     for document in word_list:
         tokens = document.split()
-        if len(tokens) <= 4:
+        if len(tokens) <= 12:
             continue
         else:
-            output = list(ngrams(tokens, 4))
+            output = list(ngrams(tokens, 12))
         for ngram in output:
             ngrams_all.append(" ".join(ngram))
 
     return pd.DataFrame({'ngrams': ngrams_all})
 
+def documentNgrams2(df, n=4):
+    ngrams_all = {f'ngram_{i}': [] for i in range(n)}
+    documentos = []
+    word_list = df['excerpt'].tolist()
+
+    for idx, document in enumerate(word_list):
+        tokens = document.split()
+        if len(tokens) <= n:
+            continue
+        else:
+            output = list(ngrams(tokens, n))
+        for i, ngram in enumerate(output):
+            ngrams_all[f'ngram_{i}'].append(" ".join(ngram))
+            documentos.append(idx)
+
+    result_df = pd.DataFrame({'documento_original': documentos})
+    result_df.update(pd.DataFrame(ngrams_all))
+
+    return result_df
 ##
 ## outra ref: Repositorio Fabio Colado
 

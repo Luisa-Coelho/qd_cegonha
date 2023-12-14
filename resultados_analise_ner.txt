@@ -8,6 +8,7 @@ pos 999
 71802
 
 #### Analisando 1000 excertos
+
 Tokens em stopwords: 204.611
 Tokens em normalizacao: 160.781
 Tokens em n-grama: 1
@@ -17,13 +18,57 @@ Tokens sem pre-processamento: 160.781
 
 #### MÉDIAS DE ENTIDADES POR PRÉ-PROCESSAMENTO #######
 
+Media entidades Stopwords 6.444444444444445
+Media entidades Normalizacao 5.676676676676677
+Media entidades N-Grama 1.0
+Media entidades Lematização 9.478478478478479
+Media entidades POS 0.4844844844844845
 
 ##### STOPWORDS ########
-TOTAL entidades
-LOC:
-PER:
-ORG:
+Entidade que mais aparece entre os documentoS
 
+('boa vista', 3): 1 ocorrências
+('ricardo herculano bulhões mattos presidente cms', 1): 1 ocorrências
+('rr', 1): 1 ocorrências
+('iradilson sampaio souza', 1): 1 ocorrências
+('prefeitura municipal boa vista', 1): 1 ocorrências
+('sispacto', 1)
+
+Excerto com menor e *MAIOR* numero de entidades: 8: presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando proposta reestruturação macroáreas, objetivando alcançar maior eficiência, eficácia, efetividade gestão municipal, e; considerando urgência assunto requer. resolve: aprovar "ad referendum" proposta reestruturação macroáreas. boa vista, 06 setembro 2012. ricardo herculano bulhões mattos presidente cms/bv prefeitura municipal boa vista conselho municipal saúde boa vista homologação homologo resolução aprova "ad referendum" conforme parecer nº 016/2012, proposta reestruturação macroáreas homologo presente resolução, termos lei n.º 8.142, 28 dezembro 1990. boa vista - rr, 06 setembro 2012. iradilson sampaio souza prefeito prefeitura municipal boa vista conselho municipal saúde boa vista resolução n.º 017/2012. presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando urgência assunto requer. resolve: aprovar "ad referendum" cadastro metas pactuação 2012 pacto saúde - sispacto. boa vista, 03 outubro 2012.
 
 #### NORMALIZACAO #######
+Entidade que mais aparece entre os documentoS
 
+('ricardo herculano bulhões mattos presidente cmsbv', 1): 1 ocorrências
+('vista homologaçao', 1): 1 ocorrências
+('boa vista', 1): 1 ocorrências
+('iradilson', 1): 1 ocorrências
+('prefeitura municipal boa', 1): 1 ocorrências
+('boa vista resoluçao', 1): 1 ocorrências
+
+Excerto com menor numero de entidades: 6: presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando proposta reestruturação macroáreas, objetivando alcançar maior eficiência, eficácia, efetividade gestão municipal, e; considerando urgência assunto requer. resolve: aprovar "ad referendum" proposta reestruturação macroáreas. boa vista, 06 setembro 2012. ricardo herculano bulhões mattos presidente cms/bv prefeitura municipal boa vista conselho municipal saúde boa vista homologação homologo resolução aprova "ad referendum" conforme parecer nº 016/2012, proposta reestruturação macroáreas homologo presente resolução, termos lei n.º 8.142, 28 dezembro 1990. boa vista - rr, 06 setembro 2012. iradilson sampaio souza prefeito prefeitura municipal boa vista conselho municipal saúde boa vista resolução n.º 017/2012. presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando urgência assunto requer. resolve: aprovar "ad referendum" cadastro metas pactuação 2012 pacto saúde - sispacto. boa vista, 03 outubro 2012.
+
+#### N-GRAMAS ###
+Entidade que mais aparece entre os documentoS
+
+('ricardo herculano bulhões mattos presidente cmsbv', 1): 1 ocorrências
+('vista homologaçao', 1): 1 ocorrências
+('boa vista', 1): 1 ocorrências
+('iradilson', 1): 1 ocorrências
+('prefeitura municipal boa', 1): 1 ocorrências
+('boa vista resoluçao', 1): 1 ocorrências
+
+Excerto com maior numero de entidades: 1: plano ações estratégicas enfrentamento doenças crônicas transmissíveis (dcnt) brasil. política estadual saúde pessoa idosa. interdisciplinaridade cuidado nutricional importância aconselhamento nutricional. educação nutricional: conceituação, objetivos, histórico; utilização processo ensino- aprendizagem educação nutricional. desenvolvimento pesquisas aplicadas área saúde contribuem ações conhecimentos desenvolvimento nutricional cidadão. qualidade assistencial segurança paciente. psicólogo reforma psiquiátrica brasileira; nova lógica assistencial saúde mental. trabalho equipe interprofissional: relacionamento competências; laudos, pareceres relatórios psicológicos, estudo caso, informação avaliação psicológica. teorias personalidade; psicopatologia; teorias técnicas psicoterápicas; psicodiagnóstico. diagnóstico diferencial; álcool, tabagismo, outras drogas redução danos. técnicas entrevista. psicoterapia problemas específicos; psicologia saúde: fundamentos prática. programas saúde mental: atuação programas prevenção tratamento, intervenção grupos vivenciais informativos. ética profissional; política nacional assistência social; lei n° 7.853, 24/10/1989 - política pública pessoas portadoras deficiência; plano nacional enfrentamento violência sexual infanto-juvenil; sinase - sistema nacional atendimento sócio educativo; lei n° 11.340, 07/08/2006 - lei maria penha. sistema integrado serviços saúde (siss); saúde mental brasil: resolução 007/99 - sms; portaria 224/92 - ms; lei nº 10.216, 06.04.2001– ms.
+
+##### LEMATIZACAO #####
+('Municipal Saúde', 2): 1 ocorrências
+('ricardo herculano bulhão', 1): 1 ocorrências
+('Saúde bom ver homologaçao', 1): 1 ocorrências
+('Resoluçao', 2): 1 ocorrências
+('Iradilson Sampaio', 1): 1 ocorrências
+('Saúde', 1): 1 ocorrências
+('Sispacto', 1): 1 ocorrências
+
+Excerto com maior numero de entidades: 9: presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando proposta reestruturação macroáreas, objetivando alcançar maior eficiência, eficácia, efetividade gestão municipal, e; considerando urgência assunto requer. resolve: aprovar "ad referendum" proposta reestruturação macroáreas. boa vista, 06 setembro 2012. ricardo herculano bulhões mattos presidente cms/bv prefeitura municipal boa vista conselho municipal saúde boa vista homologação homologo resolução aprova "ad referendum" conforme parecer nº 016/2012, proposta reestruturação macroáreas homologo presente resolução, termos lei n.º 8.142, 28 dezembro 1990. boa vista - rr, 06 setembro 2012. iradilson sampaio souza prefeito prefeitura municipal boa vista conselho municipal saúde boa vista resolução n.º 017/2012. presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando urgência assunto requer. resolve: aprovar "ad referendum" cadastro metas pactuação 2012 pacto saúde - sispacto. boa vista, 03 outubro 2012.
+
+### POS ####

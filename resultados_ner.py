@@ -5,6 +5,10 @@ import pandas as pd
 import numpy as np
 import spacy
 
+from gensim.models import Word2Vec
+
+#model = Word2Vec.load('./corpus_nilc.txt')
+
 PATH = (".")
 nlp = spacy.load("pt_core_news_lg")
 
@@ -18,7 +22,6 @@ new_df['ano'] = new_df['source_date'].str.extract(r'(\d{4})')
 new_df.loc[:, 'ano'] = pd.to_numeric(new_df['ano'], errors='coerce')
 new_df = new_df[(new_df['ano'] >= 2011) & (new_df['ano'] <= 2021)]
 
-#print(new_df.head(8))
 def nlp_preprocessamento(df):
     #doc_full = [nlp(excerpt) for excerpt in df]
     doc1 = [nlp(excerpt) for excerpt in df[1:1000]]
@@ -30,6 +33,7 @@ list_df_normalizacao = nlp_preprocessamento(pre_processamento.normalizacao(new_d
 list_df_ngrams = nlp_preprocessamento(pre_processamento.documentNgrams(new_df))
 list_df_lemmas = pre_processamento.lematizacao(nlp_preprocessamento(new_df['excerpt'].tolist()))
 list_df_pos = pre_processamento.pos(nlp_preprocessamento(new_df['excerpt'].tolist()))
+#list_df_embeddings = pre_processamento.embeddings(model, nlp_preprocessamento(new_df['excerpt'].tolist()))
 list_df_sem_processamento = nlp_preprocessamento(new_df['excerpt'])
 
 #print(f'stopwords {len(list_df_stopwords)}')
@@ -39,7 +43,7 @@ list_df_sem_processamento = nlp_preprocessamento(new_df['excerpt'])
 #print(f'pos {len(list_df_pos)}')
 #print(len(list_df_sem_processamento))
 #print(len(list(new_df['excerpt'])))
-#
+#   
 #print(f'Tokens em stopwords: {sum(len(doc) for doc in list_df_stopwords)}')
 #print(f'Tokens em normalizacao: {sum(len(doc) for doc in list_df_normalizacao)}')
 #print(f'Tokens em n-grama: {sum(len(doc) for doc in list_df_ngrams)}')
@@ -53,10 +57,10 @@ media_entidades_ngram = np.mean([len(w.ents) for w in list_df_ngrams])
 media_entidades_lematizacao = analise_pp_ner.media_entidades_lemmas(list_df_lemmas)
 media_entidades_pos = analise_pp_ner.media_entidades_pos(list_df_pos)
 
-total_entidades, entidades_n, excerto_maior, excerto_menor, entidades_misc  = analise_pp_ner.count_docs(list_df_stopwords)
-analise_pp_ner.frequencia_entidades(total_entidades, entidades_n, entidades_misc)
+total_entidades, entidades_n, mais_entidades_real, doc_mais_entidades_real, menos_entidades_real, doc_menos_entidades_real, entidades_misc, entidades_org = analise_pp_ner.count_docs(list_df_pos)
+analise_pp_ner.frequencia_entidades(total_entidades, entidades_n, entidades_misc, entidades_org)
 #analise_pp_ner.resultado_media_entidades(stopwords = media_entidades_stopwords, normalizacao = media_entidades_normalizacao, ngram = media_entidades_ngram,
 # lematizacao=media_entidades_lematizacao, pos = media_entidades_pos)
 
-print(total_entidades)
-print(excerto_menor)
+print(f"Excerto com maior numero de entidades: {mais_entidades_real}: {list_df_stopwords[doc_mais_entidades_real - 1]}\n")
+print(f"Excerto com menor numero de entidades: {menos_entidades_real}: {list_df_stopwords[doc_menos_entidades_real - 1]}\n")
