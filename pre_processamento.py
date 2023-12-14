@@ -7,6 +7,7 @@ from nltk import ngrams
 
 
 nltk.download('stopwords')
+nlp = spacy.load("pt_core_news_lg")
 
 ### Tecnicas de Pré-processamento
 # 1. Stopwords
@@ -76,14 +77,70 @@ def documentNgrams(df):
 
     for document in word_list:
         tokens = document.split()
-        if len(tokens) <= 12:
+        if len(tokens) <= 3:
             continue
         else:
-            output = list(ngrams(tokens, 12))
-        for ngram in output:
+            output = list(ngrams(tokens, 3))
+            for ngram in output:
+                ngrams_all.append(" ".join(ngram))
+
+    return ngrams_all
+#return pd.DataFrame({'ngrams': ngrams_all})
+
+def documentNgrams3(df):
+    ngrams_all = []
+    total_entity_counts = {}
+    mais_entidades_real = 0
+    doc_mais_entidades_real = 0
+    menos_entidades_real = float('inf')
+    doc_menos_entidades_real = 0
+
+    for idx, document in enumerate(df['excerpt'].tolist()):
+        doc = nlp(document)
+
+        entities = {}
+        entity_counts = {}
+
+        for entidade in doc.ents:
+            if entidade.text in entities:
+                entities[entidade.text] += 1
+            else:
+                entities[entidade.text] = 1
+
+            if entidade.label_ in entity_counts:
+                entity_counts[entidade.label_] += 1
+            else:
+                entity_counts[entidade.label_] = 1
+
+        total_entities_count = sum(entity_counts.values())
+
+        if total_entities_count > mais_entidades_real:
+            mais_entidades_real = total_entities_count
+            doc_mais_entidades_real = idx
+
+        if total_entities_count < menos_entidades_real:
+            menos_entidades_real = total_entities_count
+            doc_menos_entidades_real = idx
+
+        for ngram in ngrams(document.split(), 4):
             ngrams_all.append(" ".join(ngram))
 
-    return pd.DataFrame({'ngrams': ngrams_all})
+        # Update total_entity_counts inside the loop
+        for key, value in entity_counts.items():
+            if key in total_entity_counts:
+                total_entity_counts[key] += value
+            else:
+                total_entity_counts[key] = value
+
+    return pd.DataFrame({
+        'ngrams': ngrams_all,
+        'total_entity_counts': total_entity_counts,
+        'mais_entidades_real': mais_entidades_real,
+        'doc_mais_entidades_real': doc_mais_entidades_real,
+        'menos_entidades_real': menos_entidades_real,
+        'doc_menos_entidades_real': doc_menos_entidades_real
+    })
+
 
 def documentNgrams2(df, n=4):
     ngrams_all = {f'ngram_{i}': [] for i in range(n)}

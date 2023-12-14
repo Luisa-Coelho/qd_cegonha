@@ -24,51 +24,998 @@ Media entidades N-Grama 1.0
 Media entidades Lematização 9.478478478478479
 Media entidades POS 0.4844844844844845
 
+#######################
 ##### STOPWORDS ########
+##########################
+
+LOC: 870
+PER: 636
+ORG: 522
+MISC: 276
+
 Entidade que mais aparece entre os documentoS
 
-('boa vista', 3): 1 ocorrências
-('ricardo herculano bulhões mattos presidente cms', 1): 1 ocorrências
-('rr', 1): 1 ocorrências
-('iradilson sampaio souza', 1): 1 ocorrências
-('prefeitura municipal boa vista', 1): 1 ocorrências
-('sispacto', 1)
+('ricardo herculano bulhões mattos presidente cms', 1): 179 ocorrências
+('boa vista', 2): 172 ocorrências
+('rr', 2): 165 ocorrências
+('boa vista', 1): 130 ocorrências
+('rr', 1): 117 ocorrências
+('manaus', 1): 107 ocorrências
+('manaus', 3): 96 ocorrências
+('boa vista', 3): 94 ocorrências
 
-Excerto com menor e *MAIOR* numero de entidades: 8: presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando proposta reestruturação macroáreas, objetivando alcançar maior eficiência, eficácia, efetividade gestão municipal, e; considerando urgência assunto requer. resolve: aprovar "ad referendum" proposta reestruturação macroáreas. boa vista, 06 setembro 2012. ricardo herculano bulhões mattos presidente cms/bv prefeitura municipal boa vista conselho municipal saúde boa vista homologação homologo resolução aprova "ad referendum" conforme parecer nº 016/2012, proposta reestruturação macroáreas homologo presente resolução, termos lei n.º 8.142, 28 dezembro 1990. boa vista - rr, 06 setembro 2012. iradilson sampaio souza prefeito prefeitura municipal boa vista conselho municipal saúde boa vista resolução n.º 017/2012. presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando urgência assunto requer. resolve: aprovar "ad referendum" cadastro metas pactuação 2012 pacto saúde - sispacto. boa vista, 03 outubro 2012.
+ENTIDADES MISC
+('ncov', 2): 20 ocorrências
+('rr', 1): 14 ocorrências
+('dom n°', 1): 10 ocorrências
+('cd', 1): 8 ocorrências
+('vii', 1): 7 ocorrências
+('ipojucan carneiro', 1): 7 ocorrências
+('r$', 1): 5 ocorrências
+('c', 1): 5 ocorrências
 
-#### NORMALIZACAO #######
+
+ENTIDADES ORG
+('rr', 2): 158 ocorrências
+('rr', 1): 113 ocorrências
+('ltda', 1): 76 ocorrências
+('epp', 1): 31 ocorrências
+('oms', 1): 31 ocorrências
+('rr', 3): 26 ocorrências
+('ltda', 2): 13 ocorrências
+('gs', 1): 10 ocorrências
+
+
+ENTIDADES PER
+('ricardo herculano bulhões mattos presidente cms', 1): 179 ocorrências
+('cláudio galvão', 1): 67 ocorrências
+('claudio galvão', 1): 51 ocorrências
+('rodrigo holanda menezes jucá', 1): 40 ocorrências
+('marcelo lima lopes', 1): 34 ocorrências
+('r s l v', 1): 29 ocorrências
+('manoel neves macedo', 1): 16 ocorrências
+('marcio batista', 1): 16 ocorrências
+
+ Entidades LOC
+('boa vista', 2): 172 ocorrências
+('boa vista', 1): 130 ocorrências
+('manaus', 1): 107 ocorrências
+('manaus', 3): 96 ocorrências
+('boa vista', 3): 94 ocorrências
+('manaus', 2): 80 ocorrências
+('manaus', 4): 44 ocorrências
+('boa vista', 4): 30 ocorrências
+
+Excerto com maior numero de entidades: 36: homologo presente resolução, termos lei n.º 8.142, 28 dezembro 1990. boa vista - rr, 16 agosto 2021. luiz renato maciel melo secretário municipal saúde exercício diário oficial município boa vista - nº 5446 17 agosto 2021 14 diário oficial município boa vista - nº 5446 17 agosto 2021 15 diário oficial município boa vista - nº 5446 17 agosto 2021 16 presidente: genilson costa silva primeiro vice-presidente: juliana alves garcia almeida segundo vice-presidente: ilderson pereira silva primeiro secretário: aline maria menezes rezende chagas segundo secretário: josé francisco lopes albuquerque terceiro secretário: aderval rocha ferreira filho aderval rocha ferreira filho, adnan wadson lima, aline maria menezes rezende chagas, ero- nilson bispo feitosa, gabriel mota silva, genilson cos- ta silva, gildean santos sousa, idázio chagas lima, ilderson pereira silva, ítalo otávio teixeira pinto, joão kleber martins siqueira, josé francisco lopes albuquerque, juliana alves garcia almeida, jú- lio cézar medeiros lima, jullyerre pablo lima silva, leonel souza oliveira, manoel neves macedo, maria inês maturano lopes, melquisedek silva me- nezes, regiane batista matos, sandro denis souza cruz, thiago coelho fogaça, wan kenobby cha costa. poder legislativo 2021-08-16t18:27:17-0400 marcio batista herculano:84558113234
+
+Excerto com menor numero de entidades: 0: especialista saúde – engenheiro segurança trabalho: controlar perdas potenciais reais processos trabalho, produtos serviços identificar, determinar analisar causas perdas, estabelecendo plano ações preventivas corretivas; desenvolver, testar supervisionar sistemas, processos métodos industriais; gerenciar atividades segurança trabalho meio ambiente; planejar empreendimentos atividades industriais coordenar equipes, treinamentos atividades trabalho; emitir divulgar documentos técnicos relatórios, mapas risco contratos. 10. especialista saúde – estatístico: executar pesquisas, levantamentos estudos estatísticos, planejando orientando coleta tratamento dados, analisando interpretando fixar leis, correlação padrões comportamento determinados fenômenos. trabalhador saúde – assistente saúde (ensino médio técnico completo) 1.
+
+###############################
+##### STOPWORDS ANTES 2016 ####
+###############################
+
+Contagem entidades:
+
+LOC: 821
+ORG: 569
+PER: 757
+MISC: 416
+
 Entidade que mais aparece entre os documentoS
 
-('ricardo herculano bulhões mattos presidente cmsbv', 1): 1 ocorrências
-('vista homologaçao', 1): 1 ocorrências
-('boa vista', 1): 1 ocorrências
-('iradilson', 1): 1 ocorrências
-('prefeitura municipal boa', 1): 1 ocorrências
-('boa vista resoluçao', 1): 1 ocorrências
+('ltda', 1): 149 ocorrências
+('boa vista', 2): 105 ocorrências
+('rr', 2): 102 ocorrências
+('ricardo herculano bulhões mattos presidente cms', 1): 97 ocorrências
+('r$', 1): 94 ocorrências
+('cnpj', 1): 64 ocorrências
+('rr', 1): 60 ocorrências
+('belém', 2): 58 ocorrências
 
-Excerto com menor numero de entidades: 6: presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando proposta reestruturação macroáreas, objetivando alcançar maior eficiência, eficácia, efetividade gestão municipal, e; considerando urgência assunto requer. resolve: aprovar "ad referendum" proposta reestruturação macroáreas. boa vista, 06 setembro 2012. ricardo herculano bulhões mattos presidente cms/bv prefeitura municipal boa vista conselho municipal saúde boa vista homologação homologo resolução aprova "ad referendum" conforme parecer nº 016/2012, proposta reestruturação macroáreas homologo presente resolução, termos lei n.º 8.142, 28 dezembro 1990. boa vista - rr, 06 setembro 2012. iradilson sampaio souza prefeito prefeitura municipal boa vista conselho municipal saúde boa vista resolução n.º 017/2012. presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando urgência assunto requer. resolve: aprovar "ad referendum" cadastro metas pactuação 2012 pacto saúde - sispacto. boa vista, 03 outubro 2012.
 
-#### N-GRAMAS ###
+ENTIDADES MISC
+('r$', 1): 55 ocorrências
+('mp', 1): 43 ocorrências
+('ipojucan carneiro', 1): 14 ocorrências
+('cplpalmas@gmail.com', 1): 12 ocorrências
+('www', 1): 11 ocorrências
+('c', 1): 9 ocorrências
+('vii', 1): 8 ocorrências
+('samu', 1): 7 ocorrências
+
+
+ENTIDADES ORG
+('ltda', 1): 123 ocorrências
+('rr', 2): 101 ocorrências
+('rr', 1): 62 ocorrências
+('r$', 1): 55 ocorrências
+('epp', 1): 36 ocorrências
+('cnpj', 1): 19 ocorrências
+('ltda', 2): 18 ocorrências
+('araguaína-to', 1): 18 ocorrências
+
+
+ENTIDADES PER
+('ricardo herculano bulhões mattos presidente cms', 1): 97 ocorrências
+('rodrigo holanda menezes jucá', 1): 36 ocorrências
+('r s l v', 1): 34 ocorrências
+('marcelo lima lopes', 1): 34 ocorrências
+('sérgio amorim figueiredo', 1): 24 ocorrências
+('amorim figueiredo', 2): 20 ocorrências
+('jean luis coutinho', 2): 18 ocorrências
+('r$', 1): 15 ocorrências
+
+ Entidades LOC
+('boa vista', 2): 105 ocorrências
+('cnpj', 1): 64 ocorrências
+('belém', 2): 58 ocorrências
+('boa vista', 1): 57 ocorrências
+('boa vista', 3): 52 ocorrências
+('manaus', 1): 50 ocorrências
+('ltda', 1): 48 ocorrências
+('palmas', 1): 46 ocorrências
+
+Excerto com maior numero de entidades: 37: pregão nº. 102/2011 – cls/pm ata registro preços nº. 055/2011- gerep/semsa dia 11 outubro 2011, secretaria municipal saúde – semsa registrados preços empresa abaixo identificada, eventual contratação empresa prestação serviço locação equipamentos mamografia, disponibilização mão obra, destinado atendimento unidades móveis saúde mulher, desta semsa, resultante pregão nº. 102/2011-cls/pm, sistema registro preços. especificações constantes respectivo processo administrativo nº. 2011 1637 6747, assim termos proposta preços integram ata registro preços, independentemente transcrição. presente registro preços vigência 12 (doze) meses, partir desta data. gebramed comércio representações ltda. item qtde und. especificação valor unitário mensal registrado 01 08 und. serviços locação equipamentos mamografia, disponibilização mão- de-obra, conforme detalhamento anexo ii (projeto básico), destinados unidades móveis saúde mulher. r$ 81.741,10 manaus, 11 outubro 2011.
+
+Excerto com menor numero de entidades: 0: especialista saúde – engenheiro segurança trabalho: controlar perdas potenciais reais processos trabalho, produtos serviços identificar, determinar analisar causas perdas, estabelecendo plano ações preventivas corretivas; desenvolver, testar supervisionar sistemas, processos métodos industriais; gerenciar atividades segurança trabalho meio ambiente; planejar empreendimentos atividades industriais coordenar equipes, treinamentos atividades trabalho; emitir divulgar documentos técnicos relatórios, mapas risco contratos. 10. especialista saúde – estatístico: executar pesquisas, levantamentos estudos estatísticos, planejando orientando coleta tratamento dados, analisando interpretando fixar leis, correlação padrões comportamento determinados fenômenos. trabalhador saúde – assistente saúde (ensino médio técnico completo) 1.
+
+#########################################
+##### STOPWORDS - DEPOIS 2016 ###########
+########################################
+Contagem entidades:
+
+LOC: 871
+PER: 743
+ORG: 552
+MISC: 340
+
 Entidade que mais aparece entre os documentoS
 
-('ricardo herculano bulhões mattos presidente cmsbv', 1): 1 ocorrências
-('vista homologaçao', 1): 1 ocorrências
-('boa vista', 1): 1 ocorrências
-('iradilson', 1): 1 ocorrências
-('prefeitura municipal boa', 1): 1 ocorrências
-('boa vista resoluçao', 1): 1 ocorrências
+('ltda', 1): 129 ocorrências
+('belém', 2): 123 ocorrências
+('sérgio amorim figueiredo', 1): 102 ocorrências
+('cnpj', 1): 93 ocorrências
+('boa vista', 2): 91 ocorrências
+('ricardo herculano bulhões mattos presidente cms', 1): 91 ocorrências
+('boa vista', 1): 84 ocorrências
+('rr', 2): 83 ocorrências
 
-Excerto com maior numero de entidades: 1: plano ações estratégicas enfrentamento doenças crônicas transmissíveis (dcnt) brasil. política estadual saúde pessoa idosa. interdisciplinaridade cuidado nutricional importância aconselhamento nutricional. educação nutricional: conceituação, objetivos, histórico; utilização processo ensino- aprendizagem educação nutricional. desenvolvimento pesquisas aplicadas área saúde contribuem ações conhecimentos desenvolvimento nutricional cidadão. qualidade assistencial segurança paciente. psicólogo reforma psiquiátrica brasileira; nova lógica assistencial saúde mental. trabalho equipe interprofissional: relacionamento competências; laudos, pareceres relatórios psicológicos, estudo caso, informação avaliação psicológica. teorias personalidade; psicopatologia; teorias técnicas psicoterápicas; psicodiagnóstico. diagnóstico diferencial; álcool, tabagismo, outras drogas redução danos. técnicas entrevista. psicoterapia problemas específicos; psicologia saúde: fundamentos prática. programas saúde mental: atuação programas prevenção tratamento, intervenção grupos vivenciais informativos. ética profissional; política nacional assistência social; lei n° 7.853, 24/10/1989 - política pública pessoas portadoras deficiência; plano nacional enfrentamento violência sexual infanto-juvenil; sinase - sistema nacional atendimento sócio educativo; lei n° 11.340, 07/08/2006 - lei maria penha. sistema integrado serviços saúde (siss); saúde mental brasil: resolução 007/99 - sms; portaria 224/92 - ms; lei nº 10.216, 06.04.2001– ms.
 
-##### LEMATIZACAO #####
-('Municipal Saúde', 2): 1 ocorrências
-('ricardo herculano bulhão', 1): 1 ocorrências
-('Saúde bom ver homologaçao', 1): 1 ocorrências
-('Resoluçao', 2): 1 ocorrências
-('Iradilson Sampaio', 1): 1 ocorrências
-('Saúde', 1): 1 ocorrências
-('Sispacto', 1): 1 ocorrências
+ENTIDADES MISC
+('mp', 1): 41 ocorrências
+('r$', 1): 24 ocorrências
+('ncov', 2): 20 ocorrências
+('vii', 1): 12 ocorrências
+('rr', 1): 12 ocorrências
+('gab/sms', 1): 12 ocorrências
+('c/c', 1): 9 ocorrências
+('cd', 1): 6 ocorrências
 
-Excerto com maior numero de entidades: 9: presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando proposta reestruturação macroáreas, objetivando alcançar maior eficiência, eficácia, efetividade gestão municipal, e; considerando urgência assunto requer. resolve: aprovar "ad referendum" proposta reestruturação macroáreas. boa vista, 06 setembro 2012. ricardo herculano bulhões mattos presidente cms/bv prefeitura municipal boa vista conselho municipal saúde boa vista homologação homologo resolução aprova "ad referendum" conforme parecer nº 016/2012, proposta reestruturação macroáreas homologo presente resolução, termos lei n.º 8.142, 28 dezembro 1990. boa vista - rr, 06 setembro 2012. iradilson sampaio souza prefeito prefeitura municipal boa vista conselho municipal saúde boa vista resolução n.º 017/2012. presidente conselho municipal saúde boa vista base competências regimentais atri- buições conferidas decreto n.º 1.318 15 abril 1991, amparado lei n.º 8.080, 19 setembro 1990 lei n.º 8.142, 28 dezembro 1990, considerando necessidade implementação ações serviços saúde, e: considerando urgência assunto requer. resolve: aprovar "ad referendum" cadastro metas pactuação 2012 pacto saúde - sispacto. boa vista, 03 outubro 2012.
 
-### POS ####
+ENTIDADES ORG
+('ltda', 1): 104 ocorrências
+('rr', 2): 77 ocorrências
+('rr', 1): 69 ocorrências
+('cnpj', 1): 49 ocorrências
+('epp', 1): 45 ocorrências
+('ltda cnpj', 1): 36 ocorrências
+('epp cnpj', 1): 32 ocorrências
+('oms', 1): 31 ocorrências
+
+
+ENTIDADES PER
+('sérgio amorim figueiredo', 1): 102 ocorrências
+('ricardo herculano bulhões mattos presidente cms', 1): 91 ocorrências
+('cláudio galvão', 1): 65 ocorrências
+('r s l v', 1): 54 ocorrências
+('claudio galvão', 1): 51 ocorrências
+('sérgio amorim figueiredo', 2): 47 ocorrências
+('dead', 1): 29 ocorrências
+('jean luis coutinho', 1): 21 ocorrências
+
+ Entidades LOC
+('belém', 2): 123 ocorrências
+('boa vista', 2): 91 ocorrências
+('boa vista', 1): 84 ocorrências
+('belém', 1): 75 ocorrências
+('cnpj', 1): 67 ocorrências
+('manaus', 1): 57 ocorrências
+('pa', 1): 56 ocorrências
+('33.90.39', 1): 56 ocorrências
+Excerto com maior numero de entidades: 36: homologo resolução nº 042/2016, 22 agosto 2016, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005. secretaria municipal educação portaria nº 0243/2016 – semed/gsaf subsecretário administração finanças exercício competência confere portaria nº 0472/2014-semed/gs, 09/04/2014, considerando art. 22, inciso i, alínea f parágrafo 5º lei nº 1.624, 30 dezembro 2011, assegura percepção vantagens pecuniárias servidores públicos área administrativa educação municipal, considerando consta processo nº 2016/4114/4240/00256, resolve: i. designar servidora abaixo citada, função secretariado escola, secretaria municipal educação (semed), quadro pessoal desta prefeitura, marjory marina marreiros pardo merce  tec.mun/assist. administracao/semed  matrícula 129.656-6a  secretária e. m. profª. ruth costa  09 salas  ge – r$ 400,00  contar 29.01.2016 registre-se, publique-se cumpra-se. manaus, 06 maio 2016.
+
+Excerto com menor numero de entidades: 0: especialista saúde – engenheiro segurança trabalho: controlar perdas potenciais reais processos trabalho, produtos serviços identificar, determinar analisar causas perdas, estabelecendo plano ações preventivas corretivas; desenvolver, testar supervisionar sistemas, processos métodos industriais; gerenciar atividades segurança trabalho meio ambiente; planejar empreendimentos atividades industriais coordenar equipes, treinamentos atividades trabalho; emitir divulgar documentos técnicos relatórios, mapas risco contratos. 10. especialista saúde – estatístico: executar pesquisas, levantamentos estudos estatísticos, planejando orientando coleta tratamento dados, analisando interpretando fixar leis, correlação padrões comportamento determinados fenômenos. trabalhador saúde – assistente saúde (ensino médio técnico completo) 1.
+
+###################################
+########### normalização ##########
+###################################
+Contagem entidades:
+
+LOC: 849
+PER: 685
+MISC: 241
+ORG: 433
+
+Entidade que mais aparece entre os documentoS
+
+('boa vista', 1): 163 ocorrências
+('ricardo herculano bulhões mattos presidente cmsbv', 1): 163 ocorrências
+('boa vista', 2): 142 ocorrências
+('manaus', 1): 115 ocorrências
+('manaus', 2): 95 ocorrências
+('ltda', 1): 70 ocorrências
+('manaus', 3): 69 ocorrências
+('cláudio galvao', 1): 66 ocorrências
+
+
+ENTIDADES MISC
+('eou', 1): 21 ocorrências
+('ncov', 2): 20 ocorrências
+('eou', 2): 8 ocorrências
+('eou', 3): 7 ocorrências
+('ad referendum', 1): 6 ocorrências
+('cd', 1): 5 ocorrências
+('vii', 1): 4 ocorrências
+('ncov', 1): 4 ocorrências
+
+
+ENTIDADES ORG
+('ltda', 1): 52 ocorrências
+('oms', 1): 31 ocorrências
+('epp', 1): 29 ocorrências
+('rr  outubro', 2): 20 ocorrências
+('rr  julho', 1): 18 ocorrências
+('rr  abril', 1): 17 ocorrências
+('rr  junho', 2): 15 ocorrências
+('rr  novembro', 1): 15 ocorrências
+
+
+ENTIDADES PER
+('ricardo herculano bulhões mattos presidente cmsbv', 1): 163 ocorrências
+('cláudio galvao', 1): 66 ocorrências
+('claudio galvao', 1): 52 ocorrências
+('rodrigo holanda menezes', 1): 29 ocorrências
+('licitaçao', 1): 22 ocorrências
+('marcelo lima lopes', 1): 22 ocorrências
+('licitaçao pregao eletrônico', 1): 21 ocorrências
+('marcio batista herculano', 1): 18 ocorrências
+
+ Entidades LOC
+('boa vista', 1): 163 ocorrências
+('boa vista', 2): 142 ocorrências
+('manaus', 1): 115 ocorrências
+('manaus', 2): 95 ocorrências
+('manaus', 3): 69 ocorrências
+('boa vista', 3): 61 ocorrências
+('vista homologaçao homologo resoluçao', 1): 48 ocorrências
+('manaus intermedio', 1): 38 ocorrências
+
+Excerto com maior numero de entidades: 32: i, lei orgânica município manaus, considerando disposto art. 10, § 3º, lei nº 1.975, 29 abril 2015, transferiu casa civil comissão municipal licitação, considerando reforma administrativa estrutura organizacional casa civil, resolve considerar dispensados, contar 01-07-2016, senhores abaixo identificados integrantes estrutura organizacional comissão municipal licitação – cml: comissão municipal licitação nome função victor medeiros dantas goes presidente clynio araujo brandao vice-presidente josé russo secretário geral danielle souza weil secretário adjunto emília fátima carneiro gadelha secretário adjunto manaus, quarta-feira, 6 julho 2016 dom | edição 3924 | página 13 maria carolina pordeus silva cardoso assessor jurídico chefe ana carolina jatahy santos assessor jurídico maria claudia jatahy paula nunes assessor jurídico ludmila wanzileu bezerra assessor jurídico richardson martins praia braga assessor jurídico erickson arley ferrreira massulo assessor técnico chefe flaviano drumond oliveira assessor técnico hudson carvalho pires assessor técnico francy littaiff abrahim membro comissão annick costa monteiro membro comissão brenda ananda souza rodrigues membro comissão edmundo pinheiro barroso auxiliar equipe apoio luiz eduardo melo vasconcelos auxiliar equipe apoio luzia labanca neves araujo auxiliar equipe apoio manuel flávio serrão silva auxiliar equipe apoio subcomissão licitação área educação cleise angela moraes pontes presidente marilucia meireles lima vice-presidente anne michelle lima ferreira secretário thaísa carvalho batista assessor jurídico altamir cristiano atayde junior assessor técnico lia almeida pinto membro muza maria holanda nogueira membro fábio diego lima martins auxiliar equipe
+
+Excerto com menor numero de entidades: 0: especialista saúde – engenheiro segurança trabalho: controlar perdas potenciais reais processos trabalho, produtos serviços identificar, determinar analisar causas perdas, estabelecendo plano ações preventivas corretivas; desenvolver, testar supervisionar sistemas, processos métodos industriais; gerenciar atividades segurança trabalho meio ambiente; planejar empreendimentos atividades industriais coordenar equipes, treinamentos atividades trabalho; emitir divulgar documentos técnicos relatórios, mapas risco contratos. 10. especialista saúde – estatístico: executar pesquisas, levantamentos estudos estatísticos, planejando orientando coleta tratamento dados, analisando interpretando fixar leis, correlação padrões comportamento determinados fenômenos. trabalhador saúde – assistente saúde (ensino médio técnico completo) 1.
+
+########################################
+##### NORMALIZACAO ANTES 2016 ##########
+########################################
+Contagem entidades:
+
+LOC: 776
+PER: 785
+ORG: 452
+MISC: 309
+
+Entidade que mais aparece entre os documentoS
+
+('ltda', 1): 100 ocorrências
+('ricardo herculano bulhões mattos presidente cmsbv', 1): 94 ocorrências
+('boa vista', 1): 84 ocorrências
+('boa vista', 2): 76 ocorrências
+('manaus', 1): 56 ocorrências
+('licitaçao', 1): 51 ocorrências
+('ltda cnpj', 1): 43 ocorrências
+('manaus', 2): 41 ocorrências
+
+
+ENTIDADES MISC
+('mp n', 1): 23 ocorrências
+('mp', 1): 22 ocorrências
+('eou', 1): 20 ocorrências
+('ipojucan carneiro', 1): 9 ocorrências
+('www', 1): 9 ocorrências
+('lvi', 1): 7 ocorrências
+('vii', 1): 6 ocorrências
+('deral', 1): 6 ocorrências
+
+
+ENTIDADES ORG
+('ltda', 1): 72 ocorrências
+('epp', 1): 29 ocorrências
+('ltda cnpj', 1): 24 ocorrências
+('epp cnpj', 1): 23 ocorrências
+('cnpj', 1): 14 ocorrências
+('rr  outubro', 2): 13 ocorrências
+('ltda', 2): 13 ocorrências
+('indicaçao', 1): 11 ocorrências
+
+
+ENTIDADES PER
+('ricardo herculano bulhões mattos presidente cmsbv', 1): 94 ocorrências
+('licitaçao', 1): 49 ocorrências
+('licitaçao', 2): 33 ocorrências
+('rodrigo holanda menezes', 1): 25 ocorrências
+('sergio amorim figueiredo', 1): 25 ocorrências
+('marcelo lima lopes', 1): 22 ocorrências
+('serio amorim figueiredo', 2): 19 ocorrências
+('jean luis coutinho', 2): 19 ocorrências
+
+ Entidades LOC
+('boa vista', 1): 84 ocorrências
+('boa vista', 2): 76 ocorrências
+('manaus', 1): 56 ocorrências
+('manaus', 2): 41 ocorrências
+('boa vista', 3): 38 ocorrências
+('araguaina', 1): 34 ocorrências
+('vista homologaçao homologo resoluçao', 1): 33 ocorrências
+('cnpj', 1): 33 ocorrências
+Excerto com maior numero de entidades: 32: homologo resolução nº 024/2021, 30 junho 2021, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005. resolução nº 025 02 julho 2021 dispõe eleição diretoria executiva conselho municipal saúde manaus – cms/mao.
+
+Excerto com menor numero de entidades: 0: contratantes: município manaus, intermédio secretaria municipal saúde – semsa empresa arion comércio equipamentos telecomunicação serviços comunicação multimídia eireli. 3. objeto: contratação empresa especializada serviço manutenção preventiva corretiva equipamentos manaus, segunda-feira, 22 novembro 2021 dom | edição 5227 | página 22 telecomunicação, incluindo fornecimento peças demais insumos necessários execução serviço, atender necessidades semsa. 4. valor: r$ 992.027,70 (novecentos noventa dois mil, vinte sete reais setenta centavos). 5. dotação orçamentária: notas empenho nº 2021ne04039, 22/10/2021, conta seguinte rubrica orçamentária 23701 10.301.0092.2154.0000 01020000 33903917, valor r$ 18.975,60 (dezoito mil, novecentos setenta cinco reais sessenta centavos); nº 2021ne04040, 22/10/2021, conta seguinte rubrica orçamentária 23701 10.301.0092.2154.0000 01020000 33903917, valor r$ 146.362,40 (cento quarenta seis mil, trezentos sessenta dois reais quarenta centavos), ficando saldo remanescente empenhado posteriormente. 6. prazo: prazo vigência presente contrato 12 (doze) meses, contar 1º/11/2021. manaus, 29 outubro 2021. extrato i - espécie: termo rescisão contrato tempo determinado atender necessidade temporária excepcional interesse público. ii - partes: município manaus, intermédio secretaria municipal saúde, prestadora serviços ellen cristina souza nascimento, agente comunitário saúde, matrícula nº 092.694-9a. iii - objeto: rescisão contrato, término prazo contratual, conforme solicitação autos processo protocolado sob 2021.01637.01412.0.006462.
+
+###################################
+### normalizacao depois 2016 #####
+#################################
+Contagem entidades:
+
+LOC: 745
+PER: 775
+MISC: 316
+ORG: 484
+
+Entidade que mais aparece entre os documentoS
+
+('ltda', 1): 102 ocorrências
+('boa vista', 1): 97 ocorrências
+('sergio amorim figueiredo', 1): 83 ocorrências
+('boa vista', 2): 82 ocorrências
+('ricardo herculano bulhões mattos presidente cmsbv', 1): 79 ocorrências
+('cláudio galvao', 1): 64 ocorrências
+('manaus', 1): 59 ocorrências
+('eou', 1): 59 ocorrências
+
+
+ENTIDADES MISC
+('eou', 1): 59 ocorrências
+('mp', 1): 41 ocorrências
+('ncov', 2): 20 ocorrências
+('r$', 1): 10 ocorrências
+('eou', 2): 9 ocorrências
+('impugnaçao', 1): 9 ocorrências
+('eou', 3): 7 ocorrências
+('vii', 1): 6 ocorrências
+
+
+ENTIDADES ORG
+('ltda', 1): 93 ocorrências
+('ltda cnpj', 1): 45 ocorrências
+('epp', 1): 42 ocorrências
+('epp cnpj', 1): 37 ocorrências
+('oms', 1): 31 ocorrências
+('cnpj', 1): 18 ocorrências
+('r$', 1): 16 ocorrências
+('rr  julho', 1): 15 ocorrências
+
+
+ENTIDADES PER
+('sergio amorim figueiredo', 1): 83 ocorrências
+('ricardo herculano bulhões mattos presidente cmsbv', 1): 79 ocorrências
+('cláudio galvao', 1): 64 ocorrências
+('claudio galvao', 1): 52 ocorrências
+('sergio amorim figueiredo', 2): 42 ocorrências
+('r s l v', 1): 38 ocorrências
+('licitaçao', 1): 34 ocorrências
+('dead', 1): 29 ocorrências
+
+ Entidades LOC
+('boa vista', 1): 97 ocorrências
+('boa vista', 2): 82 ocorrências
+('manaus', 1): 59 ocorrências
+('manaus', 2): 54 ocorrências
+('araguaina', 1): 50 ocorrências
+('manaus', 3): 42 ocorrências
+('boa vista', 3): 31 ocorrências
+('vista homologaçao homologo resoluçao', 1): 29 ocorrências
+
+Excerto com maior numero de entidades: 29: homologo resolução nº 017/2019, 24 abril 2019, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005. anexo 01 resolução nº 017/2019 - cms/mao, 24 abril 2019 relação delegados eleitos etapa estadual 16ª conferência nacional saúde delegados gestores titulares nº nome (a) delegado 1 aldemarina ignez souza pereira 2 aline conceição souza maia 3 altemira diniz lima 4 alzira picanço oliveira 5 anderson amora menezes silva 6 andrea pinheiro mello gomes 7 anete rodrigues dantas 8 angela maria matos nascimento 9 clemilda lobo amora menezes 10 cristiane rodrigues 11 delzuita pinheiro silva 12 denise rodrigues amorim araujo 13 ednilda correa santos 14 elivandra franco mendes 15 evaneide marques velozo 16 eweane costa pinto lopes 17 francicleia santos azevedo 18 francileide moreira lima bindá 19 francisca dorinez santos vicente 20 francisca sonja ale girão 21 francivania oliveira rocha 22 geraldo lopes souza junior 23 glauco jean rodrigues silva 24 herick morais paula 25 higson martins leite 26 izabel lopes monteiro nascimento 27 jocile batista saldanha junior 28 john kennedy sarmento silva 29 kellen dias silva 30 luciana oliveira lopes 31 lucimeyre viana martins guimarães 32 luiz urrutia martins pinheiro junior 33 maria carmo leao 34 maria perpetuo socorro b. veloso 35 maria socorro furtado soares 36 maria socorro m.
+
+Excerto com menor numero de entidades: 0: especialista saúde – engenheiro segurança trabalho: controlar perdas potenciais reais processos trabalho, produtos serviços identificar, determinar analisar causas perdas, estabelecendo plano ações preventivas corretivas; desenvolver, testar supervisionar sistemas, processos métodos industriais; gerenciar atividades segurança trabalho meio ambiente; planejar empreendimentos atividades industriais coordenar equipes, treinamentos atividades trabalho; emitir divulgar documentos técnicos relatórios, mapas risco contratos. 10. especialista saúde – estatístico: executar pesquisas, levantamentos estudos estatísticos, planejando orientando coleta tratamento dados, analisando interpretando fixar leis, correlação padrões comportamento determinados fenômenos. trabalhador saúde – assistente saúde (ensino médio técnico completo) 1.
+
+########################################
+########### LEMATIZAÇÃO ####################
+######################################
+Contagem entidades:
+
+PER: 849
+LOC: 944
+MISC: 441
+ORG: 398
+
+Entidade que mais aparece entre os documentoS
+
+('Acrescimos', 1): 260 ocorrências
+('Municipal Saúde', 1): 255 ocorrências
+('ricardo herculano bulhão', 1): 170 ocorrências
+('Municipal', 1): 151 ocorrências
+('Manaus', 1): 143 ocorrências
+('Resoluçao', 1): 137 ocorrências
+('Conselho Municipal', 1): 124 ocorrências
+('manaus', 1): 122 ocorrências
+
+
+ENTIDADES MISC
+('Aquisiçao', 1): 56 ocorrências
+('Aquisiçao', 2): 22 ocorrências
+('Execuçao contrato', 1): 21 ocorrências
+('ncov', 2): 20 ocorrências
+('Manutençao funcional             ', 1): 16 ocorrências
+('Manutençao funcional            ', 1): 15 ocorrências
+('estabelecir', 1): 14 ocorrências
+('ofi Cial', 1): 13 ocorrências
+
+
+ENTIDADES ORG
+('Saúde bom ver homologaçao homologo', 1): 49 ocorrências
+('Ltda', 1): 38 ocorrências
+('oms', 1): 31 ocorrências
+('ltda', 1): 25 ocorrências
+('epp', 1): 19 ocorrências
+('Secretaria Gestao', 1): 13 ocorrências
+('tecnico', 1): 12 ocorrências
+('Con-', 1): 11 ocorrências
+
+
+ENTIDADES PER
+('Acrescimos', 1): 260 ocorrências
+('Municipal Saúde', 1): 256 ocorrências
+('ricardo herculano bulhão', 1): 170 ocorrências
+('Municipal', 1): 98 ocorrências
+('Manutençao', 1): 97 ocorrências
+('Cláudio Galvao Santos', 1): 66 ocorrências
+('Licitaçao', 1): 41 ocorrências
+('Claudio Galvao Santos', 1): 41 ocorrências
+
+ Entidades LOC
+('Manaus', 1): 143 ocorrências
+('Resoluçao', 1): 140 ocorrências
+('Municipal', 1): 140 ocorrências
+('Conselho Municipal', 1): 124 ocorrências
+('manaus', 1): 122 ocorrências
+('boa vista', 1): 120 ocorrências
+('Saúde', 1): 109 ocorrências
+('Secretaria Municipal', 1): 108 ocorrências
+Excerto com maior numero de entidades: 38: nº segmento gestor 1 homero miranda leão neto 2 maria graças soares feitoza 3 lubélia sá freire silva 4 dircélia ortiz almeida 5 elizabeth lopes silva 6 thaianne viana siqueira 7 deib lima souza 8 nair chase silva 9 henry walber dantas vieira 10 alexandre magno cardoso oliveira nº segmento trabalhador 1 cecília leite motta oliveira 2 maria lúcia ferreira marcião 3 gilson apurinã peixoto silva 4 nara núbia garcia souza 5 ellery barreto costa 6 osmar monteiro souza filho 7 arnoldo gomes costa júnior 8 sidclei lima silva 9 marlene deus lima 10 luiz carlos bonates oliveira nº segmento usuário 1 adalberto moreira silva 2 joão bosco lima 3 jackson guimarães cordeiro 4 isaías perpétuo fernandes 5 gilson aguiar silva 6 jean maximynno lopes 7 jean cláudio queiroz merlo 8 lucilene pontes silva 9 maria carmo trindade serra 10 marlene pereira silva 11 evalcilene costa santos 12 alcides januário souza 13 maria celeste monteiro ferreira 14 herculano rodrigues moura 15 francisco bezerra moreira 16 macilei pinto silva 17 helena ribeiro souza 18 josuel martins 19 ronaldo andré bacry brasil 20 eliete silva siqueira manaus, 20 maio 2014 homologo resolução nº 044/14, 20 maio 2014, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005.
+
+Excerto com menor numero de entidades: 0: homologo resolução nº 021/2021, 26 maio 2021, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005. resolução nº 022 26 maio 2021 dispõe sobre aprovação pactuação municipal metas interfederativas indicadores ano 2021.
+
+###########################################
+########## LEMATIZACAO ANTES 2016 ############
+#############################################
+Contagem entidades:
+
+LOC: 935
+PER: 898
+MISC: 557
+ORG: 485
+
+Entidade que mais aparece entre os documentoS
+
+('Municipal', 1): 171 ocorrências
+('Municipal Saúde', 1): 170 ocorrências
+('Aquisiçao', 1): 164 ocorrências
+('Acrescimos', 1): 129 ocorrências
+('Secretaria Municipal', 1): 122 ocorrências
+('ricardo herculano bulhão', 1): 107 ocorrências
+('Manutençao', 1): 105 ocorrências
+('Contrataçao', 1): 104 ocorrências
+
+
+ENTIDADES MISC
+('Aquisiçao', 1): 135 ocorrências
+('Aquisiçao', 2): 88 ocorrências
+('Chaves', 1): 47 ocorrências
+('mp n', 1): 23 ocorrências
+('mp', 1): 22 ocorrências
+('eou', 1): 17 ocorrências
+('estabelecir', 1): 13 ocorrências
+('dotaçao orçamentár', 1): 13 ocorrências
+
+
+ENTIDADES ORG
+('Ltda', 1): 60 ocorrências
+('Saúde bom ver homologaçao homologo', 1): 37 ocorrências
+('ltda', 1): 32 ocorrências
+('Con-', 1): 21 ocorrências
+('epp Cnpj', 1): 19 ocorrências
+('Secretaria Municipal Saúde', 1): 18 ocorrências
+('Secretaria Gestao', 1): 16 ocorrências
+('epp', 1): 14 ocorrências
+
+
+ENTIDADES PER
+('Municipal Saúde', 1): 158 ocorrências
+('Acrescimos', 1): 129 ocorrências
+('Municipal', 1): 128 ocorrências
+('ricardo herculano bulhão', 1): 107 ocorrências
+('Manutençao', 1): 102 ocorrências
+('Licitaçao', 1): 59 ocorrências
+('Municipal', 2): 42 ocorrências
+('Jucá', 1): 35 ocorrências
+
+ Entidades LOC
+('Contrataçao', 1): 104 ocorrências
+('Municipal', 1): 103 ocorrências
+('Secretaria Municipal', 1): 96 ocorrências
+('Resoluçao', 1): 88 ocorrências
+('Saúde', 1): 79 ocorrências
+('Manaus', 1): 70 ocorrências
+('manaus', 1): 64 ocorrências
+('Conselho Municipal', 1): 64 ocorrências
+
+Excerto com maior numero de entidades: 38: portaria nº 403/2019-gcont/semsa secretário municipal saúde, uso atribuições conferidas artigo 128, inciso ii lei orgânica município manaus, considerando dispositivos artigos 67 73, lei nº 8.666, 21 junho 1993; considerando quarto termo aditivo contrato nº 035/2014 – prorrogação alteração razão social, si celebram município manaus, meio secretaria municipal saúde – semsa, empresa cace – comércio equipamentos, representações serviços eletrônicos ltda – me. considerando dilatação contrato nº 035/2014 12 (doze) meses, contar dia 3 novembro 2018, referente serviços continuados manutenção preventiva corretiva equipamentos fisioterapia unidades saúde desta secretaria, conformidade pregão presencial nº 148/2014 – scls/cml/pm. manaus, quinta-feira, 18 julho 2019 dom | edição 4641 | página 5 considerando portaria nº 757/2018-gcont/semsa, 17 dezembro 2018, designa servidores acompanhar, fiscalizar atestar notas fiscais e/ou recibos referentes contrato supracitado. resolve: i – dispensar servidora abaixo elencada, designada portaria nº 023/2019-gcont/semsa, 14 janeiro 2019. servidor matrícula função monica simão cabral 109.057-7a fiscal ii – designar servidoras seguir relacionadas acompanhar, fiscalizar atestar notas fiscais e/ou recibos, referentes contrato citado preâmbulo desta portaria. servidor matrícula função eliuma pereira costa 108.074-1a fiscal altemira diniz lima 095.231-1b fiscal suplente iii – manter demais fiscais mencionados portarias anteriores, conforme seguir, ainda sendo necessárias, mínimo, 3 (três) assinaturas servidores designados fins atesto notas fiscais e/ou recibos.
+
+Excerto com menor numero de entidades: 0: contratantes: município manaus, intermédio secretaria municipal saúde – semsa empresa arion comércio equipamentos telecomunicação serviços comunicação multimídia eireli. 3. objeto: contratação empresa especializada serviço manutenção preventiva corretiva equipamentos manaus, segunda-feira, 22 novembro 2021 dom | edição 5227 | página 22 telecomunicação, incluindo fornecimento peças demais insumos necessários execução serviço, atender necessidades semsa. 4. valor: r$ 992.027,70 (novecentos noventa dois mil, vinte sete reais setenta centavos). 5. dotação orçamentária: notas empenho nº 2021ne04039, 22/10/2021, conta seguinte rubrica orçamentária 23701 10.301.0092.2154.0000 01020000 33903917, valor r$ 18.975,60 (dezoito mil, novecentos setenta cinco reais sessenta centavos); nº 2021ne04040, 22/10/2021, conta seguinte rubrica orçamentária 23701 10.301.0092.2154.0000 01020000 33903917, valor r$ 146.362,40 (cento quarenta seis mil, trezentos sessenta dois reais quarenta centavos), ficando saldo remanescente empenhado posteriormente. 6. prazo: prazo vigência presente contrato 12 (doze) meses, contar 1º/11/2021. manaus, 29 outubro 2021. extrato i - espécie: termo rescisão contrato tempo determinado atender necessidade temporária excepcional interesse público. ii - partes: município manaus, intermédio secretaria municipal saúde, prestadora serviços ellen cristina souza nascimento, agente comunitário saúde, matrícula nº 092.694-9a. iii - objeto: rescisão contrato, término prazo contratual, conforme solicitação autos processo protocolado sob 2021.01637.01412.0.006462.
+
+#####################################################
+############# LEMATIZACAO DEPOIS 2016 ###############
+#####################################################
+Contagem entidades:
+
+PER: 898
+LOC: 960
+MISC: 617
+ORG: 478
+
+Entidade que mais aparece entre os documentoS
+
+('Municipal Saúde', 1): 197 ocorrências
+('Acrescimos', 1): 153 ocorrências
+('Municipal', 1): 146 ocorrências
+('Aquisiçao', 1): 146 ocorrências
+('Secretaria Municipal', 1): 143 ocorrências
+('Saúde', 1): 110 ocorrências
+('Aquisiçao', 2): 104 ocorrências
+('Resoluçao', 1): 93 ocorrências
+
+
+ENTIDADES MISC
+('Aquisiçao', 1): 137 ocorrências
+('Aquisiçao', 2): 88 ocorrências
+('eou', 1): 42 ocorrências
+('Chaves', 1): 42 ocorrências
+('mp', 1): 41 ocorrências
+('dotaçao orçamentár', 1): 25 ocorrências
+('Execuçao contrato', 1): 24 ocorrências
+('estabelecir', 1): 21 ocorrências
+
+
+ENTIDADES ORG
+('Cnpj', 1): 44 ocorrências
+('ltda', 1): 42 ocorrências
+('Ltda', 1): 41 ocorrências
+('epp Cnpj', 1): 32 ocorrências
+('oms', 1): 31 ocorrências
+('epp', 1): 30 ocorrências
+('Saúde bom ver homologaçao homologo', 1): 30 ocorrências
+('Secretaria Municipal Saúde', 1): 23 ocorrências
+
+
+ENTIDADES PER
+('Municipal Saúde', 1): 169 ocorrências
+('Acrescimos', 1): 153 ocorrências
+('Municipal', 1): 88 ocorrências
+('ricardo herculano bulhão', 1): 87 ocorrências
+('Manutençao', 1): 85 ocorrências
+('sergio Amorim Figueiredo', 1): 83 ocorrências
+('Cláudio Galvao Santos', 1): 64 ocorrências
+('relatorio', 1): 47 ocorrências
+
+ Entidades LOC
+('Municipal', 1): 127 ocorrências
+('Secretaria Municipal', 1): 124 ocorrências
+('Saúde', 1): 109 ocorrências
+('Resoluçao', 1): 92 ocorrências
+('Municipal Saúde Belem', 2): 78 ocorrências
+('Manaus', 1): 73 ocorrências
+('boa vista', 1): 73 ocorrências
+('Sesma', 1): 72 ocorrências
+
+Excerto com maior numero de entidades: 34: homologo resolução nº 017/2019, 24 abril 2019, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005. anexo 01 resolução nº 017/2019 - cms/mao, 24 abril 2019 relação delegados eleitos etapa estadual 16ª conferência nacional saúde delegados gestores titulares nº nome (a) delegado 1 aldemarina ignez souza pereira 2 aline conceição souza maia 3 altemira diniz lima 4 alzira picanço oliveira 5 anderson amora menezes silva 6 andrea pinheiro mello gomes 7 anete rodrigues dantas 8 angela maria matos nascimento 9 clemilda lobo amora menezes 10 cristiane rodrigues 11 delzuita pinheiro silva 12 denise rodrigues amorim araujo 13 ednilda correa santos 14 elivandra franco mendes 15 evaneide marques velozo 16 eweane costa pinto lopes 17 francicleia santos azevedo 18 francileide moreira lima bindá 19 francisca dorinez santos vicente 20 francisca sonja ale girão 21 francivania oliveira rocha 22 geraldo lopes souza junior 23 glauco jean rodrigues silva 24 herick morais paula 25 higson martins leite 26 izabel lopes monteiro nascimento 27 jocile batista saldanha junior 28 john kennedy sarmento silva 29 kellen dias silva 30 luciana oliveira lopes 31 lucimeyre viana martins guimarães 32 luiz urrutia martins pinheiro junior 33 maria carmo leao 34 maria perpetuo socorro b. veloso 35 maria socorro furtado soares 36 maria socorro m.
+
+Excerto com menor numero de entidades: 0: homologo resolução nº 021/2021, 26 maio 2021, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005. resolução nº 022 26 maio 2021 dispõe sobre aprovação pactuação municipal metas interfederativas indicadores ano 2021.
+
+############################################
+########### PART-OF-SPEECH ###################
+############################################
+Contagem entidades:
+
+PER: 167
+MISC: 36
+ORG: 89
+LOC: 124
+
+Entidade que mais aparece entre os documentoS
+
+('municipio vista', 1): 62 ocorrências
+('semsa', 1): 31 ocorrências
+('ncov', 2): 20 ocorrências
+('prefeitura comissao licitaçao', 1): 11 ocorrências
+('licitaçao', 1): 9 ocorrências
+('gestao conselho plano', 1): 9 ocorrências
+('relatorio', 1): 9 ocorrências
+('sclscmlpm', 1): 8 ocorrências
+
+
+ENTIDADES MISC
+('cd', 1): 5 ocorrências
+('gestao açao', 1): 3 ocorrências
+('▲', 2): 2 ocorrências
+('gestao semges', 1): 2 ocorrências
+('prestador(a', 1): 1 ocorrências
+('pbf', 1): 1 ocorrências
+('quinta-feira outubro', 1): 1 ocorrências
+('httpwwwcomprasmanausamgovbr terça-feira agosto', 1): 1 ocorrências
+
+
+ENTIDADES ORG
+('gestao conselho plano', 1): 9 ocorrências
+('conselho vista resoluçao nº', 1): 8 ocorrências
+('prefeitura consultoria contrato', 1): 8 ocorrências
+('gestao conselho', 1): 7 ocorrências
+('indicaçao', 1): 5 ocorrências
+('conselho prefeitura', 1): 5 ocorrências
+('gestao conselho relatorio gestao', 1): 5 ocorrências
+('epp', 1): 3 ocorrências
+
+
+ENTIDADES PER
+('semsa', 1): 31 ocorrências
+('ncov', 2): 20 ocorrências
+('relatorio', 1): 9 ocorrências
+('sclscmlpm', 1): 8 ocorrências
+('licitaçao', 1): 7 ocorrências
+('pas', 1): 5 ocorrências
+('relatorio gestao', 1): 5 ocorrências
+('gssemmasdh', 1): 4 ocorrências
+
+ Entidades LOC
+('municipio vista', 1): 62 ocorrências
+('prefeitura comissao licitaçao', 1): 11 ocorrências
+('siops', 1): 7 ocorrências
+('amazonas', 1): 3 ocorrências
+('nal hospital periodo', 1): 3 ocorrências
+('municipio vista', 2): 3 ocorrências
+('iranduba', 1): 2 ocorrências
+('licitaçao', 1): 2 ocorrências
+Excerto com maior numero de entidades: 7: diárias - civil f.r: 100100 recursos ordinários 100 000 geral total -59.000,00 ficha: 354 04.122.0025.2074.0000 gestão atividades administrativas ibvm 3.3.90.14.00 diárias - civil f.r: 100100 recursos ordinários 100 000 geral total -52.000,00 ficha: 355 04.122.0025.2074.0000 gestão atividades administrativas ibvm 3.3.90.30.00 material consumo f.r: 100100 recursos ordinários 100 000 geral total -19.500,00 ficha: 356 04.122.0025.2074.0000 gestão atividades administrativas ibvm 3.3.90.33.00 passagens despesas locomoção f.r: 100100 recursos ordinários 100 000 geral total -39.000,00 diário oficial município boa vista - nº 4914 01 julho 2019 52 prefeitura municipal boa vista 05943030/0001-55 exercício: 2019 decreto nº. 15 (o), 01 março 2019 reduções local: 07 secretaria municipal educação cultura - smec 07 03 00 fetec ficha: 357 04.122.0025.2074.0000 gestão atividades administrativas ibvm 3.3.90.35.00 serviços consultoria f.r: 100100 recursos ordinários 100 000 geral total -13.800,00 ficha: 359 04.122.0025.2074.0000 gestão atividades administrativas ibvm 3.3.90.39.00 outros serviços terceiros - pessoa jurídica f.r: 100100 recursos ordinários 100 000 geral total -44.000,00 ficha: 360 04.122.0025.2074.0000 gestão atividades administrativas ibvm 3.3.90.47.00 obrigações tributárias contributivas f.r: 100100 recursos ordinários 100 000 geral total -2.600,00 ficha: 362 04.122.0025.2075.0000 administração pessoal recursos humanos ibvm 3.1.90.11.00 vencimentos vantagens fixas – pessoal civil f.r: 100100 recursos ordinários 100 000 geral total -655.000,00 ficha: 363 04.122.0025.2075.0000 administração pessoal recursos humanos ibvm 3.1.90.13.00 obrigações patronais f.r: 100100 recursos ordinários 100 000 geral total -127.600,00 local: 08 secretaria municipal saúde - smsa 08 06 00 gestão vigilância saúde
+
+Excerto com menor numero de entidades: 0: plano ações estratégicas enfrentamento doenças crônicas transmissíveis (dcnt) brasil. política estadual saúde pessoa idosa. interdisciplinaridade cuidado nutricional importância aconselhamento nutricional. educação nutricional: conceituação, objetivos, histórico; utilização processo ensino- aprendizagem educação nutricional. desenvolvimento pesquisas aplicadas área saúde contribuem ações conhecimentos desenvolvimento nutricional cidadão. qualidade assistencial segurança paciente. psicólogo reforma psiquiátrica brasileira; nova lógica assistencial saúde mental. trabalho equipe interprofissional: relacionamento competências; laudos, pareceres relatórios psicológicos, estudo caso, informação avaliação psicológica. teorias personalidade; psicopatologia; teorias técnicas psicoterápicas; psicodiagnóstico. diagnóstico diferencial; álcool, tabagismo, outras drogas redução danos. técnicas entrevista. psicoterapia problemas específicos; psicologia saúde: fundamentos prática. programas saúde mental: atuação programas prevenção tratamento, intervenção grupos vivenciais informativos. ética profissional; política nacional assistência social; lei n° 7.853, 24/10/1989 - política pública pessoas portadoras deficiência; plano nacional enfrentamento violência sexual infanto-juvenil; sinase - sistema nacional atendimento sócio educativo; lei n° 11.340, 07/08/2006 - lei maria penha. sistema integrado serviços saúde (siss); saúde mental brasil: resolução 007/99 - sms; portaria 224/92 - ms; lei nº 10.216, 06.04.2001– ms.
+
+###############################################
+############## POS - ANTES 2016 ##############
+##############################################
+
+Contagem entidades:
+
+PER: 151
+ORG: 52
+LOC: 133
+MISC: 57
+
+Entidade que mais aparece entre os documentoS
+
+('municipio vista', 1): 32 ocorrências
+('semsa', 1): 15 ocorrências
+('licitaçao', 1): 12 ocorrências
+('wwwcidadecomprascombr sitio superintendência', 1): 12 ocorrências
+('higor', 1): 9 ocorrências
+('prefeitura comissao licitaçao', 1): 7 ocorrências
+('relatorio gestao', 2): 5 ocorrências
+('relatorio', 1): 5 ocorrências
+
+
+ENTIDADES MISC
+('ipamb', 1): 4 ocorrências
+('gestao açao', 1): 3 ocorrências
+('cms cms', 1): 3 ocorrências
+('cd', 2): 3 ocorrências
+('cd', 1): 2 ocorrências
+('secon', 1): 2 ocorrências
+('ses-', 1): 2 ocorrências
+('ipamb', 2): 2 ocorrências
+
+
+ENTIDADES ORG
+('exp rep', 1): 4 ocorrências
+('tel', 1): 4 ocorrências
+('gestao conselho relatorio gestao', 1): 3 ocorrências
+('indicaçao', 1): 2 ocorrências
+('periodicos j', 1): 2 ocorrências
+('gestao conselho', 1): 2 ocorrências
+('gestao conselho vista', 1): 2 ocorrências
+('relatorio gestao', 1): 2 ocorrências
+
+
+ENTIDADES PER
+('semsa', 1): 15 ocorrências
+('wwwcidadecomprascombr sitio superintendência', 1): 12 ocorrências
+('licitaçao', 1): 7 ocorrências
+('relatorio gestao', 1): 6 ocorrências
+('sesmapmb', 1): 5 ocorrências
+('andria', 1): 5 ocorrências
+('relatorio', 1): 4 ocorrências
+('sclscmlpm', 1): 3 ocorrências
+
+ Entidades LOC
+('municipio vista', 1): 32 ocorrências
+('higor', 1): 9 ocorrências
+('prefeitura comissao licitaçao', 1): 7 ocorrências
+('licitaçao', 1): 5 ocorrências
+('gestao', 1): 3 ocorrências
+('cpl', 1): 3 ocorrências
+('palácio julho vista', 1): 3 ocorrências
+('fundamentaçao contrato', 1): 3 ocorrências
+Excerto com maior numero de entidades: 6: presidente conselho municipal saúde, uso competências regimentais atribuições conferidas lei 236-a 04 abril 1991, devidos acréscimos lei nº. 742, 24 junho 2004; regulamentado decreto n.º1.318, 15 abril 1991, concordância resolução nº. 333, 04 novembro 2003 ainda conformidade lei nº 8.142, 28 dezembro 1990, lei 8.080, 19 setembro 1990, e: •considerando disposições contidas portaria gm/ms nº. 1.654/2011, instituiu programa nacional melhoria acesso qualidade atenção básica; •considerando portaria gm/ms nº. 535, 3 abril 2013, instituiu regras segundo ciclo programa nacional melhoria acesso qualida- atenção básica; •considerando termo compromisso vigência 18 meses, partir data publicação portaria; •considerando urgência assunto requer; resolve: aprovar “ad referendum” termo compro- misso gestão municipal contratualização muni- cípio boa vista equipes atenção básica equi- pes saúde bucal, núcleos apoio saúde família centro especialidade odontológica. boa vista, 12 junho 2013. ricardo herculano bulhões mattos presidente cms/bv prefeitura municipal boa vista conselho municipal saúde boa vista homologação homologo resolução nº. 011/2013 aprova “ad referendum” termo compromisso gestão municipal contratualização município boa vista equipes atenção básica equipes saúde bucal, núcleos apoio saúde família centro especiali- dade odontológica. homologo presente resolução, termos lei n.º 8.142, 28 dezembro 1990. boa vista – rr, 12 junho 2013.
+
+Excerto com menor numero de entidades: 0: plano ações estratégicas enfrentamento doenças crônicas transmissíveis (dcnt) brasil. política estadual saúde pessoa idosa. interdisciplinaridade cuidado nutricional importância aconselhamento nutricional. educação nutricional: conceituação, objetivos, histórico; utilização processo ensino- aprendizagem educação nutricional. desenvolvimento pesquisas aplicadas área saúde contribuem ações conhecimentos desenvolvimento nutricional cidadão. qualidade assistencial segurança paciente. psicólogo reforma psiquiátrica brasileira; nova lógica assistencial saúde mental. trabalho equipe interprofissional: relacionamento competências; laudos, pareceres relatórios psicológicos, estudo caso, informação avaliação psicológica. teorias personalidade; psicopatologia; teorias técnicas psicoterápicas; psicodiagnóstico. diagnóstico diferencial; álcool, tabagismo, outras drogas redução danos. técnicas entrevista. psicoterapia problemas específicos; psicologia saúde: fundamentos prática. programas saúde mental: atuação programas prevenção tratamento, intervenção grupos vivenciais informativos. ética profissional; política nacional assistência social; lei n° 7.853, 24/10/1989 - política pública pessoas portadoras deficiência; plano nacional enfrentamento violência sexual infanto-juvenil; sinase - sistema nacional atendimento sócio educativo; lei n° 11.340, 07/08/2006 - lei maria penha. sistema integrado serviços saúde (siss); saúde mental brasil: resolução 007/99 - sms; portaria 224/92 - ms; lei nº 10.216, 06.04.2001– ms.
+
+#############################################
+############# POS DEPOIS 2016 ###############
+#############################################
+Contagem entidades:
+
+PER: 147
+MISC: 39
+ORG: 71
+LOC: 94
+
+Entidade que mais aparece entre os documentoS
+
+('municipio vista', 1): 39 ocorrências
+('ncov', 2): 20 ocorrências
+('srp', 1): 17 ocorrências
+('semsa', 1): 16 ocorrências
+('licitaçao', 1): 12 ocorrências
+('gestao conselho plano', 1): 9 ocorrências
+('relatorio', 1): 9 ocorrências
+('prefeitura consultoria contrato', 1): 8 ocorrências
+
+
+ENTIDADES MISC
+('cd', 1): 4 ocorrências
+('ses-', 1): 3 ocorrências
+('▲', 2): 2 ocorrências
+('gestao semges', 1): 2 ocorrências
+('lxi', 1): 2 ocorrências
+('secon', 1): 2 ocorrências
+('prestador(a', 1): 1 ocorrências
+('pbf', 1): 1 ocorrências
+
+
+ENTIDADES ORG
+('gestao conselho plano', 1): 9 ocorrências
+('prefeitura consultoria contrato', 1): 8 ocorrências
+('conselho vista resoluçao nº', 1): 6 ocorrências
+('conselho prefeitura', 1): 5 ocorrências
+('gestao conselho', 1): 5 ocorrências
+('srp', 1): 5 ocorrências
+('indicaçao', 1): 3 ocorrências
+('jcm', 1): 2 ocorrências
+
+
+ENTIDADES PER
+('ncov', 2): 20 ocorrências
+('semsa', 1): 16 ocorrências
+('licitaçao', 1): 11 ocorrências
+('relatorio', 1): 9 ocorrências
+('pas', 1): 5 ocorrências
+('sclscmlpm', 1): 5 ocorrências
+('loman', 1): 3 ocorrências
+('relatorio gestao', 1): 3 ocorrências
+
+ Entidades LOC
+('municipio vista', 1): 39 ocorrências
+('srp', 1): 12 ocorrências
+('prefeitura comissao licitaçao', 1): 6 ocorrências
+('siops', 1): 6 ocorrências
+('nal hospital periodo', 1): 3 ocorrências
+('iranduba', 1): 2 ocorrências
+('ria coronavirus', 1): 2 ocorrências
+('municipio vista', 2): 2 ocorrências
+Excerto com maior numero de entidades: 7: nacional humanização; f) coordenar implantação sistemas qualidade atenção saúde rede atenção primária; g) coordenar, monitorar avaliar desempenho rede atenção primária conjunto diretorias nível central diretorias distritos saúde; h) coordenar elaboração relatórios periódicos anual; i) executar outras atividades inerentes área competência; xvi - departamento redes atenção: a) dirigir, coordenar, controlar monitorar atividades serem desenvolvidas sob direção; b) dirigir, coordenar, controlar supervisionar rede atenção saúde; c) coordenar rede atenção saúde, promovendo ações viabilizem acesso, integralidade equidade, consonância políticas nacional, estadual municipal saúde; d) definir, conjunto distritos saúde, diretrizes rede atenção serem desenvolvidas semsa; e) organizar pactuar acesso ações serviços rede atenção saúde partir necessidades atenção básica; f) efetivar mecanismos referência contrarreferência rede serviços saúde município áreas pertinentes serviços; g) participar planejamento implantação rede especialidades outros venham instituídos semsa; h) participar planejamento atividades desenvolvidas redes atenção saúde; i) sugerir indicadores monitoramento avaliação ações serviços rede atenção saúde; j) monitorar avaliar programação ações serviços rede saúde semsa; k) elaborar, conjunto áreas técnicas pertinentes, material didático, orientação técnico-operacional, consonância política educação permanente; l) estabelecer normas técnicas protocolos relativos rede atenção saúde, promovendo acompanhamento execução atividades âmbito município; m)
+
+Excerto com menor numero de entidades: 0: plano ações estratégicas enfrentamento doenças crônicas transmissíveis (dcnt) brasil. política estadual saúde pessoa idosa. interdisciplinaridade cuidado nutricional importância aconselhamento nutricional. educação nutricional: conceituação, objetivos, histórico; utilização processo ensino- aprendizagem educação nutricional. desenvolvimento pesquisas aplicadas área saúde contribuem ações conhecimentos desenvolvimento nutricional cidadão. qualidade assistencial segurança paciente. psicólogo reforma psiquiátrica brasileira; nova lógica assistencial saúde mental. trabalho equipe interprofissional: relacionamento competências; laudos, pareceres relatórios psicológicos, estudo caso, informação avaliação psicológica. teorias personalidade; psicopatologia; teorias técnicas psicoterápicas; psicodiagnóstico. diagnóstico diferencial; álcool, tabagismo, outras drogas redução danos. técnicas entrevista. psicoterapia problemas específicos; psicologia saúde: fundamentos prática. programas saúde mental: atuação programas prevenção tratamento, intervenção grupos vivenciais informativos. ética profissional; política nacional assistência social; lei n° 7.853, 24/10/1989 - política pública pessoas portadoras deficiência; plano nacional enfrentamento violência sexual infanto-juvenil; sinase - sistema nacional atendimento sócio educativo; lei n° 11.340, 07/08/2006 - lei maria penha. sistema integrado serviços saúde (siss); saúde mental brasil: resolução 007/99 - sms; portaria 224/92 - ms; lei nº 10.216, 06.04.2001– ms.
+
+#####################################
+################ N-GRAMA ############
+#####################################
+Contagem entidades:
+
+PER: 52
+LOC: 90
+MISC: 38
+ORG: 3
+
+Entidade que mais aparece entre os documentoS
+
+('manaus', 1): 25 ocorrências
+('prevençao', 1): 10 ocorrências
+('brasil', 1): 8 ocorrências
+('evento fr nd', 1): 8 ocorrências
+('fr nd', 1): 7 ocorrências
+('sf p açao valor', 1): 7 ocorrências
+('eou', 1): 6 ocorrências
+('gestao administrativa', 1): 5 ocorrências
+
+
+ENTIDADES MISC
+('sf p açao valor', 1): 7 ocorrências
+('eou', 1): 6 ocorrências
+('dom | ediçao', 1): 3 ocorrências
+('r$', 1): 3 ocorrências
+('multimidia eireli', 1): 2 ocorrências
+('historia maritima', 1): 1 ocorrências
+('navio inglês tecnico maritimo', 1): 1 ocorrências
+('tecnico maritimo', 1): 1 ocorrências
+
+
+ENTIDADES ORG
+('ltda', 1): 3 ocorrências
+
+
+ENTIDADES PER
+('fr nd', 1): 7 ocorrências
+('maria penha', 1): 3 ocorrências
+('louise vicente', 1): 3 ocorrências
+('humanizaçao', 1): 2 ocorrências
+('proteçao navio inglês', 1): 2 ocorrências
+('semsa', 1): 2 ocorrências
+('assis cavalcante silva', 1): 2 ocorrências
+('suplente ii', 1): 2 ocorrências
+
+ Entidades LOC
+('manaus', 1): 25 ocorrências
+('prevençao', 1): 10 ocorrências
+('brasil', 1): 8 ocorrências
+('evento fr nd', 1): 8 ocorrências
+('gestao administrativa', 1): 5 ocorrências
+('poluiçao', 1): 4 ocorrências
+('ampliaçao', 1): 3 ocorrências
+('manaus intermedio', 1): 3 ocorrências
+Excerto com maior numero de entidades: 2: homologo resolução nº 010/2021, 24 fevereiro 2021, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005. resolução nº 011 24 fevereiro 2021 dispõe sobre prorrogação mandato conselheiros municipais saúde manaus dia 27 março 2022.
+
+Excerto com menor numero de entidades: 0: plano ações estratégicas enfrentamento doenças crônicas transmissíveis (dcnt) brasil. política estadual saúde pessoa idosa. interdisciplinaridade cuidado nutricional importância aconselhamento nutricional. educação nutricional: conceituação, objetivos, histórico; utilização processo ensino- aprendizagem educação nutricional. desenvolvimento pesquisas aplicadas área saúde contribuem ações conhecimentos desenvolvimento nutricional cidadão. qualidade assistencial segurança paciente. psicólogo reforma psiquiátrica brasileira; nova lógica assistencial saúde mental. trabalho equipe interprofissional: relacionamento competências; laudos, pareceres relatórios psicológicos, estudo caso, informação avaliação psicológica. teorias personalidade; psicopatologia; teorias técnicas psicoterápicas; psicodiagnóstico. diagnóstico diferencial; álcool, tabagismo, outras drogas redução danos. técnicas entrevista. psicoterapia problemas específicos; psicologia saúde: fundamentos prática. programas saúde mental: atuação programas prevenção tratamento, intervenção grupos vivenciais informativos. ética profissional; política nacional assistência social; lei n° 7.853, 24/10/1989 - política pública pessoas portadoras deficiência; plano nacional enfrentamento violência sexual infanto-juvenil; sinase - sistema nacional atendimento sócio educativo; lei n° 11.340, 07/08/2006 - lei maria penha. sistema integrado serviços saúde (siss); saúde mental brasil: resolução 007/99 - sms; portaria 224/92 - ms; lei nº 10.216, 06.04.2001– ms.
+
+
+##############################################
+#########N - GRAMA ANTES 2016 ###############
+############################################
+
+Contagem entidades:
+
+MISC: 27
+PER: 96
+LOC: 138
+ORG: 6
+
+Entidade que mais aparece entre os documentoS
+
+('manaus', 1): 65 ocorrências
+('licitaçao', 1): 9 ocorrências
+('subcomissao licitaçao', 1): 6 ocorrências
+('dom | ediçao', 1): 5 ocorrências
+('semsa', 1): 5 ocorrências
+('r$', 1): 5 ocorrências
+('adrianopolis', 1): 4 ocorrências
+('gssemmasdh', 1): 4 ocorrências
+
+
+ENTIDADES MISC
+('dom | ediçao', 1): 5 ocorrências
+('ctb contran manutençao total', 1): 2 ocorrências
+('r$', 1): 2 ocorrências
+('ediçao | página comissao', 1): 1 ocorrências
+('wwwcomprasnetgovbr abertura propostas', 1): 1 ocorrências
+('ediçao | página secretaria', 1): 1 ocorrências
+('total r$', 1): 1 ocorrências
+('p nd fr r$', 1): 1 ocorrências
+
+
+ENTIDADES ORG
+('r$', 1): 3 ocorrências
+('epp', 1): 2 ocorrências
+('nd fr r$', 1): 1 ocorrências
+
+
+ENTIDADES PER
+('semsa', 1): 5 ocorrências
+('gssemmasdh', 1): 4 ocorrências
+('sclscmlpm', 1): 3 ocorrências
+('descentralizaçao', 1): 3 ocorrências
+('licitaçao comissao municipal', 1): 2 ocorrências
+('licitaçao comissao municipal licitaçao', 1): 2 ocorrências
+('dr moura', 1): 2 ocorrências
+('subcomissao licitaçao', 1): 2 ocorrências
+
+ Entidades LOC
+('manaus', 1): 65 ocorrências
+('licitaçao', 1): 8 ocorrências
+('subcomissao licitaçao', 1): 4 ocorrências
+('adrianopolis', 1): 4 ocorrências
+('brasilia', 1): 3 ocorrências
+('municipal licitaçao', 1): 2 ocorrências
+('scls', 1): 2 ocorrências
+('caminhao pipa', 1): 2 ocorrências
+Excerto com maior numero de entidades: 2: homologo resolução nº 041/2021, 08 novembro 2021, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005. resolução nº 042 08 novembro 2021 dispõe sobre celebração termo convênio cooperação técnica secretaria municipal saúde – semsa fundação dermatologia venereologia alfredo mata - fuam.
+
+Excerto com menor numero de entidades: 0: plano ações estratégicas enfrentamento doenças crônicas transmissíveis (dcnt) brasil. política estadual saúde pessoa idosa. interdisciplinaridade cuidado nutricional importância aconselhamento nutricional. educação nutricional: conceituação, objetivos, histórico; utilização processo ensino- aprendizagem educação nutricional. desenvolvimento pesquisas aplicadas área saúde contribuem ações conhecimentos desenvolvimento nutricional cidadão. qualidade assistencial segurança paciente. psicólogo reforma psiquiátrica brasileira; nova lógica assistencial saúde mental. trabalho equipe interprofissional: relacionamento competências; laudos, pareceres relatórios psicológicos, estudo caso, informação avaliação psicológica. teorias personalidade; psicopatologia; teorias técnicas psicoterápicas; psicodiagnóstico. diagnóstico diferencial; álcool, tabagismo, outras drogas redução danos. técnicas entrevista. psicoterapia problemas específicos; psicologia saúde: fundamentos prática. programas saúde mental: atuação programas prevenção tratamento, intervenção grupos vivenciais informativos. ética profissional; política nacional assistência social; lei n° 7.853, 24/10/1989 - política pública pessoas portadoras deficiência; plano nacional enfrentamento violência sexual infanto-juvenil; sinase - sistema nacional atendimento sócio educativo; lei n° 11.340, 07/08/2006 - lei maria penha. sistema integrado serviços saúde (siss); saúde mental brasil: resolução 007/99 - sms; portaria 224/92 - ms; lei nº 10.216, 06.04.2001– ms.
+
+##################################
+############ N-GRAMA DEPOIS 2016 #########3
+##########################################
+Contagem entidades:
+
+PER: 52
+LOC: 90
+MISC: 38
+ORG: 3
+
+Entidade que mais aparece entre os documentoS
+
+('manaus', 1): 25 ocorrências
+('prevençao', 1): 10 ocorrências
+('brasil', 1): 8 ocorrências
+('evento fr nd', 1): 8 ocorrências
+('fr nd', 1): 7 ocorrências
+('sf p açao valor', 1): 7 ocorrências
+('eou', 1): 6 ocorrências
+('gestao administrativa', 1): 5 ocorrências
+
+
+ENTIDADES MISC
+('sf p açao valor', 1): 7 ocorrências
+('eou', 1): 6 ocorrências
+('dom | ediçao', 1): 3 ocorrências
+('r$', 1): 3 ocorrências
+('multimidia eireli', 1): 2 ocorrências
+('historia maritima', 1): 1 ocorrências
+('navio inglês tecnico maritimo', 1): 1 ocorrências
+('tecnico maritimo', 1): 1 ocorrências
+
+
+ENTIDADES ORG
+('ltda', 1): 3 ocorrências
+
+
+ENTIDADES PER
+('fr nd', 1): 7 ocorrências
+('maria penha', 1): 3 ocorrências
+('louise vicente', 1): 3 ocorrências
+('humanizaçao', 1): 2 ocorrências
+('proteçao navio inglês', 1): 2 ocorrências
+('semsa', 1): 2 ocorrências
+('assis cavalcante silva', 1): 2 ocorrências
+('suplente ii', 1): 2 ocorrências
+
+ Entidades LOC
+('manaus', 1): 25 ocorrências
+('prevençao', 1): 10 ocorrências
+('brasil', 1): 8 ocorrências
+('evento fr nd', 1): 8 ocorrências
+('gestao administrativa', 1): 5 ocorrências
+('poluiçao', 1): 4 ocorrências
+('ampliaçao', 1): 3 ocorrências
+('manaus intermedio', 1): 3 ocorrências
+Excerto com maior numero de entidades: 2: homologo resolução nº 010/2021, 24 fevereiro 2021, termos parágrafo 2º, art. 1º lei nº 8.142, 28 dezembro 1990, combinado decreto nº 7.871 27 abril 2005. resolução nº 011 24 fevereiro 2021 dispõe sobre prorrogação mandato conselheiros municipais saúde manaus dia 27 março 2022.
+
+Excerto com menor numero de entidades: 0: plano ações estratégicas enfrentamento doenças crônicas transmissíveis (dcnt) brasil. política estadual saúde pessoa idosa. interdisciplinaridade cuidado nutricional importância aconselhamento nutricional. educação nutricional: conceituação, objetivos, histórico; utilização processo ensino- aprendizagem educação nutricional. desenvolvimento pesquisas aplicadas área saúde contribuem ações conhecimentos desenvolvimento nutricional cidadão. qualidade assistencial segurança paciente. psicólogo reforma psiquiátrica brasileira; nova lógica assistencial saúde mental. trabalho equipe interprofissional: relacionamento competências; laudos, pareceres relatórios psicológicos, estudo caso, informação avaliação psicológica. teorias personalidade; psicopatologia; teorias técnicas psicoterápicas; psicodiagnóstico. diagnóstico diferencial; álcool, tabagismo, outras drogas redução danos. técnicas entrevista. psicoterapia problemas específicos; psicologia saúde: fundamentos prática. programas saúde mental: atuação programas prevenção tratamento, intervenção grupos vivenciais informativos. ética profissional; política nacional assistência social; lei n° 7.853, 24/10/1989 - política pública pessoas portadoras deficiência; plano nacional enfrentamento violência sexual infanto-juvenil; sinase - sistema nacional atendimento sócio educativo; lei n° 11.340, 07/08/2006 - lei maria penha. sistema integrado serviços saúde (siss); saúde mental brasil: resolução 007/99 - sms; portaria 224/92 - ms; lei nº 10.216, 06.04.2001– ms.
+
+

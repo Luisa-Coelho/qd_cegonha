@@ -58,8 +58,8 @@ def count_docs(lista_nlp_preprocessed):
     menos_entidades_real = 200
 
     for doc in lista_nlp_preprocessed:
-        doc_new = nlp(" ".join(doc))
-        #doc_new = doc
+        #doc_new = nlp(" ".join(doc))
+        doc_new = doc
         
         doc_count +=1
         entities = {}
@@ -133,22 +133,26 @@ def count_docs(lista_nlp_preprocessed):
             if count > mais_entidades:
                 mais_entidades = count
                 doc_mais_entidades = doc_count
-
+#
             if count < menos_entidades:
                 menos_entidades = count
                 doc_menos_entidades = doc_count
-    
-    entidades.append(entities)
-    entidades_contagem.append(entity_counts)
-    entidades_misc.append(entities_misc)
 
-    #if mais_entidades > mais_entidades_real:
-    #    mais_entidades_real = mais_entidades
-    #    doc_mais_entidades_real = doc_mais_entidades
-#
-    #if menos_entidades < menos_entidades_real:
-    #    menos_entidades_real = menos_entidades
-    #    doc_menos_entidades_real = doc_menos_entidades
+        total_entities_count = sum(entity_counts.values())
+        if total_entities_count > mais_entidades_real:
+            mais_entidades_real = total_entities_count
+            doc_mais_entidades_real = doc_count
+
+        if total_entities_count < menos_entidades_real:
+            menos_entidades_real = total_entities_count
+            doc_menos_entidades_real = doc_count
+    
+        entidades.append(entities)
+        entidades_contagem.append(entity_counts)
+        entidades_misc.append(entities_misc)
+        entidades_org.append(entities_org)
+        entidades_per.append(entities_per)
+        entidades_loc.append(entities_loc)
 
     for dicionario in entidades_contagem:
         for chave, valor in dicionario.items():
@@ -156,20 +160,11 @@ def count_docs(lista_nlp_preprocessed):
                 total_entity_counts[chave] += 1
             else:
                 total_entity_counts[chave] = 1
-
-    total_entities_count = sum(entity_counts.values())
-    if total_entities_count > mais_entidades_real:
-            mais_entidades_real = total_entities_count
-            doc_mais_entidades_real = doc_count
-
-    if total_entities_count < menos_entidades_real:
-            menos_entidades_real = total_entities_count
-            doc_menos_entidades_real = doc_count
     
 
-    return total_entity_counts, entidades, mais_entidades_real, doc_mais_entidades_real, menos_entidades_real, doc_menos_entidades_real, entidades_misc, entidades_org
+    return total_entity_counts, entidades, mais_entidades_real, doc_mais_entidades_real, menos_entidades_real, doc_menos_entidades_real, entidades_misc, entidades_org, entidades_per, entidades_loc
 
-def frequencia_entidades(total_entity_counts, entidades, entidades_misc, entidades_org):
+def frequencia_entidades(total_entity_counts, entidades, entidades_misc, entidades_org, entidades_per, entidades_loc):
     print("Contagem entidades:\n")
     for entity_type, total_count in total_entity_counts.items():
         print(f"{entity_type}: {total_count}\n")
@@ -183,7 +178,7 @@ def frequencia_entidades(total_entity_counts, entidades, entidades_misc, entidad
 
     for entidade, contagem in oito_maiores_entidades:
       print(f'{entidade}: {contagem} ocorrências')
-##
+
     print('\n\nENTIDADES MISC')
     contagem_total = Counter
     lista_de_tuplas = [tuple(d.items()) for d in entidades_misc]
@@ -194,24 +189,32 @@ def frequencia_entidades(total_entity_counts, entidades, entidades_misc, entidad
     for entidade, contagem in oito_maiores_misc:
         print(f'{entidade}: {contagem} ocorrências') 
         
-#
     print('\n\nENTIDADES ORG')
     contagem_total = Counter
     lista_de_tuplas = [tuple(d.items()) for d in entidades_org]
     todas_as_tuplas = [item for sublist in lista_de_tuplas for item in sublist]
     contagem = contagem_total(todas_as_tuplas)
-    oito_maiores_misc = contagem.most_common(8)
+    oito_maiores_org = contagem.most_common(8)
 
-    for entidade, contagem in oito_maiores_misc:
+    for entidade, contagem in oito_maiores_org:
         print(f'{entidade}: {contagem} ocorrências')  
-#        
-#
-#    print('\n\nENTIDADES PER')
-#    for i in sorted(entidades, key=lambda x: (entidades[x], x == 'PER'), reverse=True)[:8]:
-#        print(i, entidades[i])  
-#        
-#
-#    print('\n\nENTIDADES LOC')
-#    for i in sorted(entidades, key=lambda x: (entidades[x], x == 'LOC'), reverse=True)[:8]:
-#        print(i, entidades[i])
-#
+        
+    print('\n\nENTIDADES PER')
+    contagem_total = Counter
+    lista_de_tuplas = [tuple(d.items()) for d in entidades_per]
+    todas_as_tuplas = [item for sublist in lista_de_tuplas for item in sublist]
+    contagem = contagem_total(todas_as_tuplas)
+    oito_maiores_per = contagem.most_common(8)
+
+    for entidade, contagem in oito_maiores_per:
+        print(f'{entidade}: {contagem} ocorrências')
+
+    print('\n Entidades LOC')
+    contagem_total = Counter
+    lista_de_tuplas = [tuple(d.items()) for d in entidades_loc]
+    todas_as_tuplas = [item for sublist in lista_de_tuplas for item in sublist]
+    contagem = contagem_total(todas_as_tuplas)
+    oito_maiores_loc = contagem.most_common(8)
+
+    for entidade, contagem in oito_maiores_loc:
+        print(f'{entidade}: {contagem} ocorrências')
